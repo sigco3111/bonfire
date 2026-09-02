@@ -36,6 +36,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-flutter-pub-
 
+      - name: Enable web platform
+        working-directory: example
+        run: flutter create . --platforms=web
+
       - name: Install example dependencies
         working-directory: example
         run: flutter pub get
