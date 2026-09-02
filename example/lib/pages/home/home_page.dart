@@ -45,22 +45,36 @@ class _HomePageState extends State<HomePage> {
   ItemDrawer? itemSelected;
   late List<SectionDrawer> menu;
 
+  // Scaffold에 직접 접근하기 위한 키.
+  // addPostFrameCallback은 build()의 context에서 호출되므로
+  // 이 키를 통해 ScaffoldState.openDrawer()를 안전하게 호출할 수 있다.
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool _drawerOpenedOnce = false;
+
   @override
   void initState() {
     menu = _buildMenu();
     itemSelected = menu.first.itens.first;
     super.initState();
-    // 페이지 입장 시 버거 메뉴(Drawer)를 자동으로 연다.
-    // post-frame callback을 사용해 첫 프레임이 그려진 직후 호출한다.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      Scaffold.of(context).openDrawer();
-    });
   }
 
   @override
   Widget build(BuildContext context) {
+    // 첫 빌드 직후 한 번만 Drawer를 연다.
+    // mounted 체크 + _drawerOpenedOnce 가드로 재빌드 시 중복 호출 방지.
+    if (!_drawerOpenedOnce) {
+      _drawerOpenedOnce = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        // key가 붙은 Scaffold의 상태로 직접 접근한다.
+        // build()의 context를 캡처해서 Scaffold.of()로 찾지 않아도
+        // InheritedWidget 의존 없이 호출 가능.
+        _scaffoldKey.currentState?.openDrawer();
+      });
+    }
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
