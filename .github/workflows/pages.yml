@@ -1,4 +1,4 @@
-name: Deploy Flutter Web to GitHub Pages
+name: Deploy Bonfire Example to GitHub Pages
 
 on:
   push:
@@ -32,14 +32,16 @@ jobs:
         with:
           path: |
             ~/.pub-cache
-          key: ${{ runner.os }}-flutter-pub-${{ hashFiles('**/pubspec.lock') }}
+          key: ${{ runner.os }}-flutter-pub-${{ hashFiles('example/pubspec.lock') }}
           restore-keys: |
             ${{ runner.os }}-flutter-pub-
 
-      - name: Install dependencies
+      - name: Install example dependencies
+        working-directory: example
         run: flutter pub get
 
-      - name: Build web
+      - name: Build example web
+        working-directory: example
         run: flutter build web --release --base-href "/bonfire/"
 
       - name: Setup Pages
@@ -48,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: example/build/web
 
       - name: Deploy to GitHub Pages
         id: deployment
