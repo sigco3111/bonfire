@@ -5,7 +5,7 @@ import 'package:bonfire/player/player.dart';
 import 'package:bonfire/util/extensions/extensions.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

@@ -17,42 +17,42 @@ import 'package:bonfire/util/extensions/color_extensions.dart';
 import 'package:flutter/material.dart';
 
 class BonfireWidget extends StatefulWidget {
-  /// Controls the player in the game. You can pass a list of controllers to control the player in different ways.
+  /// 게임에서 플레이어를 조작합니다. 다양한 방식으로 플레이어를 조작할 수 있도록 컨트롤러 리스트를 전달할 수 있습니다.
   final List<PlayerController>? playerControllers;
 
-  /// Represents the character controlled by the user in the game. Instances of this class has actions and movements ready to be used and configured.
+  /// 게임에서 사용자가 조작하는 캐릭터를 나타냅니다. 이 클래스의 인스턴스는 바로 쓸 수 있도록 준비된 동작(actions)과 이동(movements)을 가지고 있습니다.
   final Player? player;
 
-  /// The way you cand raw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
+  /// 체력바, 스테미나, 설정 등을 그리는 방식입니다. 다시 말해, 게임 인터페이스에 추가할 수 있는 모든 것을 의미합니다.
   final GameInterface? interface;
 
-  /// Represents a map (or world) where the game occurs.
+  /// 게임이 진행되는 맵(또는 월드)을 나타냅니다.
   final GameMap map;
 
-  /// Used to show grid in the map and facilitate the construction and testing of the map
+  /// 맵에 그리드를 표시하여 맵의 구성과 테스트를 용이하게 하는 데 사용됩니다.
   final bool debugMode;
 
-  /// Used to draw area collision in objects.
+  /// 오브젝트의 충돌 영역(area collision)을 그리는 데 사용됩니다.
   final bool showCollisionArea;
 
-  /// Color of the collision area when `showCollisionArea` is true
+  /// `showCollisionArea`가 true일 때 충돌 영역의 색상입니다.
   final Color? collisionAreaColor;
 
-  /// Used to configure lighting in the game
+  /// 게임의 조명(lighting) 설정에 사용됩니다.
   final Color? lightingColorGame;
 
   final Color? backgroundColor;
 
-  /// The [FocusNode] to control the games focus to receive event inputs.
-  /// If omitted, defaults to an internally controlled focus node.
+  /// 이벤트 입력을 받기 위한 게임의 포커스(focus)를 제어하는 [FocusNode]입니다.
+  /// 생략하면 내부에서 관리되는 기본 포커스 노드를 사용합니다.
   final FocusNode? focusNode;
 
-  /// Whether the [focusNode] requests focus once the game is mounted.
-  /// Defaults to true.
+  /// 게임이 마운트(mount)될 때 [focusNode]가 포커스를 요청할지 여부입니다.
+  /// 기본값은 true입니다.
   final bool autofocus;
 
-  /// Initial mouse cursor for this [GameWidget]
-  /// mouse cursor can be changed in runtime using [Game.mouseCursor]
+  /// 이 [GameWidget]의 초기 마우스 커서입니다.
+  /// 마우스 커서는 런타임에 [Game.mouseCursor]를 사용해 변경할 수 있습니다.
   final MouseCursor? mouseCursor;
 
   final ValueChanged<BonfireGameInterface>? onReady;

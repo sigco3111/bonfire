@@ -6,7 +6,7 @@ import 'package:bonfire/util/sprite_animation_render.dart';
 import 'package:flame/components.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -15,7 +15,7 @@ import 'package:flame/components.dart';
 /// ▀▄▄▄▄▄▀▀
 ///
 /// Rafaelbarbosatec
-/// on 04/02/22
+/// 작성일: 04/02/22
 mixin UseSpriteAnimation on GameComponent {
   Paint? _strockePaint;
   double _strokeWidth = 0;

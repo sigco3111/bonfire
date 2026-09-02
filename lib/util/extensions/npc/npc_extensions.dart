@@ -4,7 +4,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/geometry/shape.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

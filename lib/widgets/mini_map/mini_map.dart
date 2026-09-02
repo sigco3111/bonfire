@@ -6,7 +6,7 @@ import 'package:bonfire/widgets/mini_map/mini_map_canvas.dart';
 import 'package:flutter/material.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -12,7 +12,7 @@ import 'package:bonfire/bonfire.dart';
 /// Rafaelbarbosatec
 /// on 22/03/22
 
-/// Npc used for top-down perspective
+/// 탑다운(top-down) 시점에서 사용되는 NPC입니다.
 class RotationNpc extends Npc with UseSpriteAnimation, UseAssetsLoader {
   SpriteAnimation? animIdle;
   SpriteAnimation? animRun;

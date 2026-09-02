@@ -7,7 +7,7 @@ export 'rotation_npc.dart';
 export 'simple_npc.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

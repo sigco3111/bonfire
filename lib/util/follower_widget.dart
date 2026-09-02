@@ -6,7 +6,7 @@ import 'package:bonfire/util/extensions/viewport_extension.dart';
 import 'package:flutter/widgets.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

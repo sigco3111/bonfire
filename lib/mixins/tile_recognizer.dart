@@ -3,7 +3,7 @@ import 'package:bonfire/map/base/tile_component.dart';
 import 'package:bonfire/util/extensions/game_component_extensions.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -12,7 +12,7 @@ import 'package:bonfire/util/extensions/game_component_extensions.dart';
 /// ▀▄▄▄▄▄▀▀
 ///
 /// Rafaelbarbosatec
-/// on 16/05/22
+/// 작성일: 16/05/22
 
 mixin TileRecognizer on GameComponent {
   /// 현재 아래에 있는 맵 타일의 타입을 확인하는 메서드입니다.

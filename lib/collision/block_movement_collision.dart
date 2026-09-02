@@ -14,7 +14,7 @@ enum BodyType {
   bool get isStatic => this == BodyType.static;
 }
 
-/// Mixin responsible for adding stop the movement when happen collision
+/// 충돌이 발생했을 때 이동을 멈추는 기능을 추가하는 믹스인(mixin)입니다.
 mixin BlockMovementCollision on Movement {
   BodyType _bodyType = BodyType.dynamic;
   bool _blockMovementCollisionEnabled = true;

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bonfire/bonfire.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -12,7 +12,7 @@ import 'package:bonfire/bonfire.dart';
 /// ▀▄▄▄▄▄▀▀
 ///
 /// Rafaelbarbosatec
-/// on 04/02/22
+/// 작성일: 04/02/22
 mixin UseAssetsLoader on Component {
   /// [onLoad]에서 자원을 로드하는 데 사용됩니다.
   AssetsLoader? loader = AssetsLoader();

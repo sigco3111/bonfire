@@ -6,7 +6,7 @@ export 'matrix_layer.dart';
 export 'terrain_builder.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

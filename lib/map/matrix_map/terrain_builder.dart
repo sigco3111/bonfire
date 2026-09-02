@@ -4,7 +4,7 @@ import 'package:bonfire/util/functions.dart';
 import 'package:bonfire/util/pair.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

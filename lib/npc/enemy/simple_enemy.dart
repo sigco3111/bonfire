@@ -3,7 +3,7 @@ import 'package:bonfire/npc/enemy/enemy.dart';
 import 'package:bonfire/util/direction.dart';
 import 'package:bonfire/util/direction_animations/simple_direction_animation.dart';
 
-/// Enemy with animation in all direction
+/// 모든 방향 애니메이션을 가진 적(enemy)입니다.
 class SimpleEnemy extends Enemy with DirectionAnimation {
   SimpleEnemy({
     required super.position,

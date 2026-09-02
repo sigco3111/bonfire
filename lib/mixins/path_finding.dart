@@ -11,8 +11,8 @@ import 'package:bonfire/util/line_path_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-/// Mixin responsible for find path using `a_star_algorithm` and
-///  moving the component through the path
+/// `a_star_algorithm`을 사용해 경로를 찾고
+/// 그 경로를 따라 컴포넌트를 이동시키는 역할을 하는 mixin입니다.
 mixin PathFinding on Movement {
   static const REDUCTION_TO_AVOID_ROUNDING_PROBLEMS = 4;
 
@@ -39,22 +39,23 @@ mixin PathFinding on Movement {
   void setupPathFinding({
     bool? linePathEnabled,
 
-    /// Use to set line path color
+    /// 경로 선 색상을 설정하는 데 사용됩니다.
     Color? pathLineColor,
     Color? barriersCalculatedColor,
 
-    /// Use to set line path width
+    /// 경로 선 두께를 설정하는 데 사용됩니다.
     double pathLineStrokeWidth = 4,
 
-    /// Use to debug and show area collision calculated
+    /// 디버그 및 계산된 충돌 영역을 표시하는 데 사용됩니다.
     bool showBarriersCalculated = false,
     bool useOnlyVisibleBarriers = true,
 
-    /// If `true` the algorithm use the area between player and target to find the path, if false this use the entire map.
+    /// `true`이면 알고리즘이 플레이어와 대상 사이의 영역을 사용해 경로를 찾고,
+    /// `false`이면 전체 맵을 사용합니다.
     bool useAreaBetweenPlayerAndTarget = false,
 
-    /// If `false` the algorithm use map tile size with base of the grid.
-    ///  if true this use collision size of the component.
+    /// `false`이면 알고리즘이 맵 타일 크기를 그리드 기준으로 사용합니다.
+    /// `true`이면 컴포넌트의 충돌 크기를 사용합니다.
     bool gridSizeIsCollisionSize = false,
     bool withDiagonal = true,
     double factorInflateFindArea = 2,
@@ -249,7 +250,7 @@ mixin PathFinding on Movement {
     return [];
   }
 
-  /// Get size of the grid used on algorithm to calculate path
+  /// 경로 계산에 사용되는 그리드의 크기를 가져옵니다.
   double get _tileSize {
     final tileSize = gameRef.map.tileSize;
     if (_gridSizeIsCollisionSize) {
@@ -269,8 +270,7 @@ mixin PathFinding on Movement {
     );
   }
 
-  /// creating an imaginary grid would calculate how many tile
-  ///  this object is occupying.
+  /// 가상의 그리드를 만들어 이 객체가 차지하는 타일 수를 계산합니다.
   void _addCollisionOffsetsPositionByTile(Rect rect) {
     final leftTop = Offset(
       (rect.left / _tileSize).floor() * _tileSize,

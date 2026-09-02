@@ -2,7 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/widgets.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -11,7 +11,7 @@ import 'package:flutter/widgets.dart';
 /// ▀▄▄▄▄▄▀▀
 ///
 /// Rafaelbarbosatec
-/// on 23/12/21
+/// 작성일: 23/12/21
 
 /// 이 mixin은 컴포넌트에 밀림(pushable) 동작을 부여합니다.
 /// 이 mixin을 사용하려면 Component에 `Movement` mixin이 있어야 합니다.

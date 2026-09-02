@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:bonfire/bonfire.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -14,7 +14,7 @@ import 'package:bonfire/bonfire.dart';
 /// Rafaelbarbosatec
 /// on 04/03/22
 
-/// SceneAction that move the componente in the game.
+/// 게임에서 컴포넌트를 이동시키는 SceneAction입니다.
 class MoveToPositionSceneAction<T extends Movement> extends SceneAction {
   final T component;
   final Vector2 newPosition;

@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:bonfire/bonfire.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -12,7 +12,7 @@ import 'package:bonfire/bonfire.dart';
 /// ▀▄▄▄▄▄▀▀
 ///
 /// Rafaelbarbosatec
-/// on 04/02/22
+/// 작성일: 04/02/22
 mixin UseSprite on GameComponent {
   Sprite? sprite;
   Vector2? spriteOffset;

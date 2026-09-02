@@ -73,7 +73,7 @@ class TalkDialog extends StatefulWidget {
   final Alignment talkAlignment;
   final TextStyle? style;
 
-  /// in milliseconds
+  /// (단위: 밀리초(milliseconds))
   final int speed;
 
   @override

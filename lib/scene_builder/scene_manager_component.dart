@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -12,7 +12,7 @@ import 'package:bonfire/bonfire.dart';
 /// Rafaelbarbosatec
 /// on 04/03/22
 
-/// Class that represents the sceneBuilder status.
+/// sceneBuilder 상태를 나타내는 클래스입니다.
 class SceneBuilderStatus {
   final bool isRunning;
   final SceneAction? currentAction;
@@ -33,7 +33,7 @@ class SceneBuilderStatus {
   }
 }
 
-/// Component responsible for run the `SceneActions`
+/// `SceneActions`를 실행하는 역할을 하는 컴포넌트입니다.
 class SceneBuilderComponent extends Component with BonfireHasGameRef {
   final List<SceneAction> actions;
   int _indexCurrent = 0;

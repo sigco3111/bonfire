@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 
-/// Component used to add Text in your [GameInterface]
+/// [GameInterface]에 텍스트를 추가하는 데 사용되는 컴포넌트입니다.
 class TextInterfaceComponent extends InterfaceComponent {
   String text;
   late TextPaint textConfig;

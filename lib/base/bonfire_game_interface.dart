@@ -9,7 +9,7 @@ import 'package:flame/src/game/overlay_manager.dart';
 import 'package:flutter/widgets.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

@@ -114,7 +114,7 @@ extension PolygonComponentExt on PolygonComponent {
     return result;
   }
 
-  /// gives back the shape vectors multiplied by the size and scale
+  /// size와 scale을 곱한 형태의 도형 벡터를 반환합니다.
   List<Vector2> rotatedVerticesBonfire(double parentAngle) {
     final angle = parentAngle;
     if (!_cachedGlobalVertices.isCacheValid<dynamic>(<dynamic>[

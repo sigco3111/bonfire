@@ -4,10 +4,10 @@ import 'package:bonfire/collision/quad_tree/custom_quad_tree_broadphase.dart';
 import 'package:flame/collisions.dart';
 import 'package:flutter/widgets.dart';
 
-/// Collision detection modification to support a Quad Tree broadphase.
+/// 쿼드 트리(Quad Tree) 광역(broadphase)을 지원하도록 수정한 충돌 감지 클래스입니다.
 ///
-/// Do not use standard [items] list for components. Instead adds all components
-/// into [QuadTreeBroadphase] class.
+/// 표준 [items] 리스트를 컴포넌트용으로 사용하지 마세요. 대신 모든 컴포넌트를
+/// [QuadTreeBroadphase] 클래스에 추가해야 합니다.
 class CustomQuadTreeCollisionDetection
     extends StandardCollisionDetection<QuadTreeBroadphase> {
   CustomQuadTreeCollisionDetection({

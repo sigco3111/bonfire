@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -10,7 +10,7 @@ import 'package:bonfire/bonfire.dart';
 /// ▀▄▄▄▄▄▀▀
 ///
 /// Rafaelbarbosatec
-/// on 17/05/22
+/// 작성일: 17/05/22
 mixin InternalChecker on Component {
   /// 어떤 동작의 빈도를 제어하기 위해 사용될 수 있는 시각들을 저장하는 데 사용되는 맵입니다.
   Map<String, IntervalTick>? _timers;

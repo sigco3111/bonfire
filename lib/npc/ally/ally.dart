@@ -4,7 +4,7 @@ export 'rotation_ally.dart';
 export 'simple_ally.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀

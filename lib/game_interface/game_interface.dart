@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:bonfire/bonfire.dart';
 
-/// The way you cand raw things like life bars, stamina and settings. In another words, anything that you may add to the interface to the game.
+/// 체력바, 스테미나, 설정 등을 그리는 방식입니다. 다시 말해, 게임의 인터페이스에 추가할 수 있는 모든 것을 의미합니다.
 class GameInterface extends GameComponent {
   @override
   int get priority {
     return LayerPriority.getHudInterfacePriority();
   }
 
-  /// Used to add components in your interface like a Button.
+  /// Button처럼 인터페이스에 컴포넌트를 추가하는 데 사용됩니다.
   @override
   FutureOr<void> add(Component component) {
     if (component is InterfaceComponent) {
@@ -18,7 +18,7 @@ class GameInterface extends GameComponent {
     return super.add(component);
   }
 
-  /// Used to remove component of the interface by id
+  /// id로 인터페이스에서 컴포넌트를 제거하는 데 사용됩니다.
   void removeById(int id) {
     if (children.isEmpty) {
       return;

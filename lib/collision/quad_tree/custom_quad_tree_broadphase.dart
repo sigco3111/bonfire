@@ -1,10 +1,9 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/extensions.dart';
 
-/// Performs Quad Tree broadphase check.
+/// 쿼드 트리(Quad Tree) 광역(broadphase) 검사를 수행합니다.
 ///
-/// See [HasQuadTreeCollisionDetection.initializeCollisionDetection] for a
-/// detailed description of its initialization parameters.
+/// 초기화 매개변수의 자세한 설명은 [HasQuadTreeCollisionDetection.initializeCollisionDetection]를 참고하세요.
 class CustomQuadTreeBroadphase extends QuadTreeBroadphase {
   CustomQuadTreeBroadphase({
     required super.mainBoxSize,
@@ -86,8 +85,8 @@ class CustomQuadTreeBroadphase extends QuadTreeBroadphase {
     return _potentials.values;
   }
 
-  /// Caches hitbox center because calculating on-the-fly is too expensive
-  /// whereas many of game objects could not change theirs position or size
+  /// 런타임에 매번 계산하는 비용이 너무 크기 때문에 히트박스(hitbox)의 중심을 캐싱합니다.
+  /// 많은 게임 오브젝트들이 위치나 크기를 바꾸지 않기 때문입니다.
   Vector2 _cacheCenterOfHitbox(ShapeHitbox hitbox) {
     var cache = _cachedCenters[hitbox];
     if (cache == null) {

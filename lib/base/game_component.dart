@@ -4,7 +4,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/mixins/pointer_detector.dart';
 import 'package:flutter/widgets.dart';
 
-/// Base of the all components in the Bonfire
+/// Bonfire의 모든 컴포넌트 기반(base) 클래스입니다.
 abstract class GameComponent extends PositionComponent
     with
         BonfireHasGameRef,
@@ -14,7 +14,7 @@ abstract class GameComponent extends PositionComponent
         CollisionCallbacks {
   Map<String, dynamic>? properties;
 
-  /// When true this component render above all components in game.
+  /// true일 때 이 컴포넌트는 게임의 다른 모든 컴포넌트 위에 렌더링됩니다.
   bool renderAboveComponents = false;
   bool get isHud => _isHud;
   bool _isHud = false;
@@ -42,7 +42,7 @@ abstract class GameComponent extends PositionComponent
     paint.color = const Color(0xFFFFFFFF);
   }
 
-  /// Get BuildContext
+  /// BuildContext를 가져옵니다.
   BuildContext get context => gameRef.context;
 
   double lastAngle = 0;
@@ -89,7 +89,7 @@ abstract class GameComponent extends PositionComponent
     }
   }
 
-  /// Return screen position of this component.
+  /// 이 컴포넌트의 화면 좌표(screen position)를 반환합니다.
   Vector2 screenPosition() {
     if (hasGameRef) {
       return gameRef.worldToScreen(
@@ -99,7 +99,7 @@ abstract class GameComponent extends PositionComponent
     return Vector2.zero();
   }
 
-  /// Method that checks if this component is visible on the screen
+  /// 이 컴포넌트가 화면에 보이는지 확인하는 메서드입니다.
   @mustCallSuper
   bool isVisibleInCamera() {
     if (hasGameRef) {

@@ -6,9 +6,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-/// CustomBaseGame created to use `Listener` to capture touch screen gestures.
-/// Apply zoom in canvas.
-/// Reorder components per time frame.
+/// 터치 스크린 제스처를 캡처하기 위해 `Listener`를 사용하도록 만들어진 CustomBaseGame입니다.
+/// 캔버스에 줌(zoom)을 적용합니다.
+/// 프레임마다 컴포넌트의 순서를 재정렬합니다.
 abstract class BaseGame extends FlameGame
     with PointerDetector, KeyboardEvents, HasTimeScale {
   BaseGame({super.world, super.camera});
@@ -37,7 +37,7 @@ abstract class BaseGame extends FlameGame
     super.updateTree(dt);
   }
 
-  /// to get the components that contain gestures
+  /// 제스처(gestures)를 포함하는 컴포넌트를 가져옵니다.
   // Note: we avoid building a combined list here to reduce allocations on key events.
   Iterable<KeyboardEventListener> get _keyboardComponents sync* {
     for (final k in world.children.query<KeyboardEventListener>()) {
@@ -137,7 +137,7 @@ abstract class BaseGame extends FlameGame
     return result;
   }
 
-  /// Verify if the Component contain gestures.
+  /// 컴포넌트가 제스처(gestures)를 포함하는지 확인합니다.
   bool _hasGesture(Component c) {
     return (c is GameComponent && c.isVisible) && (c.hasGesture());
   }

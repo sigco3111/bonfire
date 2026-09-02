@@ -2,7 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/widgets.dart' as widget;
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -13,7 +13,7 @@ import 'package:flutter/widgets.dart' as widget;
 /// Rafaelbarbosatec
 /// on 04/03/22
 
-/// SceneAction that move camera to specific position os to follow the Component in the game.
+/// 카메라를 특정 위치로 이동시키거나 게임 내 컴포넌트를 따라가도록 하는 SceneAction입니다.
 class CameraSceneAction extends SceneAction {
   final Vector2? position;
   final GameComponent? target;

@@ -1,20 +1,20 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/widgets.dart';
 
-/// Component used to add in your [GameInterface]
+/// [GameInterface]에 추가하는 데 사용되는 컴포넌트입니다.
 class InterfaceComponent extends GameComponent
     with UseAssetsLoader, UseSprite, TapGesture {
-  /// identifier
+  /// 식별자(identifier).
   final int id;
 
-  /// sprite that will be render
+  /// 렌더링될 스프라이트(sprite).
   Sprite? spriteUnselected;
 
-  /// sprite that will be render when pressed
+  /// 눌렸을 때 렌더링될 스프라이트(sprite).
   Sprite? spriteSelected;
 
-  /// Callback used to receive onTab gesture in your component.
-  ///  this return if is selected
+  /// 컴포넌트의 onTap 제스처(gesture)를 받기 위한 콜백(callback)입니다.
+  /// 선택되었는지 여부를 반환합니다.
   final ValueChanged<bool>? onTapComponent;
   final bool selectable;
   bool _lastSelected = false;

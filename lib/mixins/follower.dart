@@ -2,7 +2,7 @@ import 'package:bonfire/base/game_component.dart';
 import 'package:flame/components.dart';
 
 ///
-/// Created by
+/// 작성자 (Created by)
 ///
 /// ─▄▀─▄▀
 /// ──▀──▀
@@ -11,7 +11,7 @@ import 'package:flame/components.dart';
 /// ▀▄▄▄▄▄▀▀
 ///
 /// Rafaelbarbosatec
-/// on 04/02/22
+/// 작성일: 04/02/22
 /// 컴포넌트가 대상을 따라가도록 하는 mixin입니다.
 /// 대상이 null이면 부모를 따라갑니다.
 mixin Follower on GameComponent {

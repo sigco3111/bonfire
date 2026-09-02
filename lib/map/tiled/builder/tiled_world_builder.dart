@@ -696,10 +696,9 @@ class TiledWorldBuilder {
   }
 }
 
-/// `GameDecoration` used by [TiledWorldBuilder] for tiles marked with
-/// `type=layered`. Its render priority is fixed to the Tiled layer index so it
-/// interleaves with the tile layers inside the `WorldMap` subtree instead of
-/// being Y-sorted against the game-level components.
+/// [TiledWorldBuilder]가 `type=layered`로 표시된 타일에 사용하는 `GameDecoration`입니다.
+/// 렌더링 우선순위는 Tiled 레이어 인덱스에 고정되어, 게임 레벨 컴포넌트와 Y축 정렬되지 않고
+/// `WorldMap` 서브트리 안의 타일 레이어들 사이에 끼어듭니다.
 class _LayeredTiledDecoration extends GameDecorationWithCollision {
   _LayeredTiledDecoration.withSprite({
     required this.fixedPriority,

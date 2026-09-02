@@ -5,7 +5,7 @@ export 'platform_enemy.dart';
 export 'rotation_enemy.dart';
 export 'simple_enemy.dart';
 
-/// It is used to represent your enemies.
+/// 적(enemy)을 표현하는 데 사용됩니다.
 class Enemy extends Npc with Attackable {
   Enemy({
     required super.position,
