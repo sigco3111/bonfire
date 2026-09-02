@@ -40,13 +40,21 @@ jobs:
         working-directory: example
         run: flutter create . --platforms=web
 
+      - name: Pin flame 1.37 (Bonfire original dependency)
+        working-directory: example
+        run: |
+          flutter pub add flame:1.37.0 --directory=example
+          flutter pub add --dev web:^1.1.0 --directory=example || true
+
       - name: Install example dependencies
         working-directory: example
         run: flutter pub get
 
-      - name: Build example web
+      - name: Build example web (wasm fallback to dart2js)
         working-directory: example
-        run: flutter build web --release --base-href "/bonfire/"
+        run: |
+          flutter build web --release --wasm --base-href "/bonfire/" || \
+          flutter build web --release --no-wasm-dry-run --base-href "/bonfire/"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
