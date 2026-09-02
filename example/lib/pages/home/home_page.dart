@@ -12,7 +12,6 @@ import 'package:example/pages/input/tap/tap_gesture_page.dart';
 import 'package:example/pages/lighting/lighting_page.dart';
 import 'package:example/pages/map/spritefusion/spritefusion_page.dart';
 import 'package:example/pages/map/terrain_builder/terrain_builder_page.dart';
-import 'package:example/pages/map/tiled/tiled_network_page.dart';
 import 'package:example/pages/map/tiled/tiled_page.dart';
 import 'package:example/pages/mini_games/manual_map/game_manual_map.dart';
 import 'package:example/pages/mini_games/multi_scenario/multi_scenario_game.dart';
@@ -126,13 +125,6 @@ class _HomePageState extends State<HomePage> {
             id: 'tiled',
             name: 'Tiled 사용',
             builder: (_) => const TiledPage(),
-            codeUrl:
-                'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/map/tiled',
-          ),
-          ItemDrawer(
-            id: 'tiled_url',
-            name: 'Tiled URL 사용',
-            builder: (_) => const TiledNetworkPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/map/tiled',
           ),
