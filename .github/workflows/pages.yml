@@ -40,21 +40,26 @@ jobs:
         working-directory: example
         run: flutter create . --platforms=web
 
-      - name: Pin flame 1.37 (Bonfire original dependency)
+      - name: Add flame 1.37 override (Bonfire compatibility)
         working-directory: example
         run: |
-          flutter pub add flame:1.37.0 --directory=example
-          flutter pub add --dev web:^1.1.0 --directory=example || true
+          if ! grep -q "dependency_overrides" pubspec.yaml; then
+            echo "" >> pubspec.yaml
+            echo "dependency_overrides:" >> pubspec.yaml
+            echo "  flame: 1.37.0" >> pubspec.yaml
+          fi
+          cat pubspec.yaml | grep -A2 dependency_overrides
 
       - name: Install example dependencies
         working-directory: example
         run: flutter pub get
 
-      - name: Build example web (wasm fallback to dart2js)
+      - name: Build example web (with wasm fallback)
         working-directory: example
         run: |
-          flutter build web --release --wasm --base-href "/bonfire/" || \
-          flutter build web --release --no-wasm-dry-run --base-href "/bonfire/"
+          flutter build web --release --wasm --base-href "/bonfire/" 2>&1 || \
+          (echo "WASM build failed, falling back to standard build" && \
+           flutter build web --release --no-wasm-dry-run --base-href "/bonfire/")
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
