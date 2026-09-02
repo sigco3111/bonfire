@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 
-/// GameDecoration with collision used in construct of the map with Tiled
+/// Tiled로 생성한 맵 구성에서 사용되는, 충돌이 있는 GameDecoration입니다.
 class GameDecorationWithCollision extends GameDecoration {
   Iterable<ShapeHitbox>? collisions;
   GameDecorationWithCollision({

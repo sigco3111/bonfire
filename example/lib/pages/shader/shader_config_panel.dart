@@ -40,7 +40,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Speed: ${speed.toStringAsFixed(3)}'),
+              Text('속도: ${speed.toStringAsFixed(3)}'),
               Slider(
                 value: speed,
                 min: 0,
@@ -56,8 +56,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
                   );
                 },
               ),
-              Text(
-                  'Distortion Strength: ${distortionStrength.toStringAsFixed(3)}'),
+              Text('왜곡 강도: ${distortionStrength.toStringAsFixed(3)}'),
               Slider(
                 value: distortionStrength,
                 min: 0,
@@ -73,7 +72,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
                   );
                 },
               ),
-              Text('Opacity: ${opacity.toStringAsFixed(3)}'),
+              Text('불투명도: ${opacity.toStringAsFixed(3)}'),
               Slider(
                 value: opacity,
                 min: 0,
@@ -90,7 +89,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
                 },
               ),
               Text(
-                  'Light range: min${lightRange.x.toStringAsFixed(3)} | max${lightRange.y.toStringAsFixed(3)}'),
+                  '광원 범위: 최소 ${lightRange.x.toStringAsFixed(3)} | 최대 ${lightRange.y.toStringAsFixed(3)}'),
               RangeSlider(
                 values: RangeValues(lightRange.x, lightRange.y),
                 min: 0,
@@ -113,7 +112,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: [
-                    const Text('Tone color'),
+                    const Text('톤 색상'),
                     const SizedBox(
                       width: 16,
                     ),
@@ -152,7 +151,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: [
-                    const Text('Light color'),
+                    const Text('광원 색상'),
                     const SizedBox(
                       width: 16,
                     ),
@@ -196,7 +195,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Pick a color!'),
+          title: const Text('색상을 선택하세요!'),
           content: SingleChildScrollView(
             child: ColorPicker(
               pickerColor: color,
@@ -205,7 +204,7 @@ class _ShaderConfigPanelState extends State<ShaderConfigPanel> {
           ),
           actions: <Widget>[
             ElevatedButton(
-              child: const Text('Got it'),
+              child: const Text('선택 완료'),
               onPressed: () {
                 Navigator.of(context).pop();
               },

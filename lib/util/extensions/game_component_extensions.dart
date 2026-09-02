@@ -4,7 +4,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/widgets.dart';
 
 extension GameComponentExtensions on GameComponent {
-  /// Add in the game a text with animation representing damage received
+  /// 받은 데미지를 애니메이션과 함께 텍스트로 표시하여 게임에 추가합니다.
   void showDamage(
     double damage, {
     TextStyle? config,
@@ -37,13 +37,13 @@ extension GameComponentExtensions on GameComponent {
     );
   }
 
-  /// Execute the ranged attack using a component with animation
+  /// 애니메이션이 있는 컴포넌트를 사용해 원거리 공격을 실행합니다.
   void simpleAttackRangeByAngle({
-    /// use animation facing right.
+    /// 오른쪽을 향한 애니메이션을 사용합니다.
     required Future<SpriteAnimation> animation,
     required Vector2 size,
 
-    /// Use radians angle
+    /// 라디안(radians) 각도를 사용합니다.
     required double angle,
     required double damage,
     required AttackOriginEnum attackFrom,
@@ -92,7 +92,7 @@ extension GameComponentExtensions on GameComponent {
     );
   }
 
-  /// Execute the ranged attack using a component with animation
+  /// 애니메이션이 있는 컴포넌트를 사용해 원거리 공격을 실행합니다.
   void simpleAttackRangeByDirection({
     required Future<SpriteAnimation> animationRight,
     required Vector2 size,
@@ -129,7 +129,7 @@ extension GameComponentExtensions on GameComponent {
     );
   }
 
-  ///Execute simple attack melee using animation
+  /// 애니메이션을 사용해 단순 근접 공격을 실행합니다.
   void simpleAttackMeleeByDirection({
     required double damage,
     required Direction direction,
@@ -158,17 +158,17 @@ extension GameComponentExtensions on GameComponent {
     );
   }
 
-  ///Execute simple attack melee using animation
+  /// 애니메이션을 사용해 단순 근접 공격을 실행합니다.
   void simpleAttackMeleeByAngle({
     required double damage,
 
-    /// Use radians angle
+    /// 라디안(radians) 각도를 사용합니다.
     required double angle,
     required AttackOriginEnum attackFrom,
     required Vector2 size,
     dynamic id,
 
-    /// use animation facing right.
+    /// 오른쪽을 향한 애니메이션을 사용합니다.
     Future<SpriteAnimation>? animation,
     bool withPush = true,
     double marginFromCenter = 0,
@@ -273,7 +273,7 @@ extension GameComponentExtensions on GameComponent {
     return null;
   }
 
-  /// Used to generate numbers to create your animations or anythings
+  /// 애니메이션 등 다양한 용도로 사용할 값을 생성하는 데 사용됩니다.
   ValueGeneratorComponent generateValues(
     Duration duration, {
     double begin = 0.0,
@@ -300,7 +300,7 @@ extension GameComponentExtensions on GameComponent {
     return valueGenerator;
   }
 
-  /// Used to add particles in your component.
+  /// 컴포넌트에 파티클을 추가할 때 사용됩니다.
   void addParticle(
     Particle particle, {
     Vector2? position,
@@ -325,7 +325,7 @@ extension GameComponentExtensions on GameComponent {
     );
   }
 
-  /// Get angle between this comp to target
+  /// 이 컴포넌트에서 타겟으로 향하는 각도를 구합니다.
   double getAngleToTarget(GameComponent target) {
     return BonfireUtil.angleBetweenPointsOffset(
       rectCollision.center,

@@ -7,8 +7,17 @@ import 'package:flutter/material.dart';
 class SectionDrawer {
   final String name;
   final List<ItemDrawer> itens;
+  String? _id;
 
-  SectionDrawer({this.name = '', required this.itens});
+  SectionDrawer({
+    String? id,
+    this.name = '',
+    required this.itens,
+  }) {
+    _id = id;
+  }
+
+  String get id => _id ?? name;
 }
 
 class ItemDrawer {
@@ -22,7 +31,7 @@ class ItemDrawer {
     required this.builder,
     this.codeUrl = '',
   }) {
-    _id == id;
+    _id = id;
   }
 
   String get id => _id ?? name;

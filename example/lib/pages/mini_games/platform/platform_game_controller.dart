@@ -26,13 +26,13 @@ class PlatformGameController extends GameComponent {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text('Congratulation'),
+            title: const Text('축하합니다'),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text('OK'),
+                child: const Text('확인'),
               ),
             ],
           );
@@ -48,20 +48,20 @@ class PlatformGameController extends GameComponent {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text('Game Over'),
+            title: const Text('게임 오버'),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text('OK'),
+                child: const Text('확인'),
               ),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                   reset();
                 },
-                child: const Text('TRY AGAIN'),
+                child: const Text('다시 시도'),
               ),
             ],
           );

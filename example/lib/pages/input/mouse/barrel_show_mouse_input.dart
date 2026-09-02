@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class BarrelShowMouseInput extends GameDecoration with MouseEventListener {
   late TextPaint _textPaint;
   final String base =
-      'Mouse screen position: {screenPosition} \nMouse click in screen: {buttonScreenClicked} \nMouse click in barrel: {buttonCompClicked} \nMouse scroll middle in screen: {mouseScrollDelta}';
+      '마우스 화면 좌표: {screenPosition} \n화면에서 클릭: {buttonScreenClicked} \n배럴에서 클릭: {buttonCompClicked} \n화면 가운데 스크롤: {mouseScrollDelta}';
   String text = '';
   Vector2 mousePosition = Vector2.zero();
   Vector2 mouseScrollDelta = Vector2.zero();

@@ -16,7 +16,7 @@ import 'package:bonfire/util/extensions/extensions.dart';
 /// Rafaelbarbosatec
 /// on 24/03/22
 extension RotationEnemyExtensions on RotationAlly {
-  /// Checks whether the player is within range. If so, move to it.
+  /// 플레이어가 범위 안에 있는지 확인하고, 범위 안에 있으면 플레이어 쪽으로 이동합니다.
   void seeAndMoveToPlayer({
     required Function(Player) closePlayer,
     // return true to stop move.

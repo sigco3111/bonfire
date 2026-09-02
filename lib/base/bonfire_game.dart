@@ -12,47 +12,47 @@ import 'package:flame/camera.dart';
 // ignore: implementation_imports
 import 'package:flutter/widgets.dart' hide Viewport;
 
-/// Is a customGame where all magic of the Bonfire happen.
+/// Bonfire의 모든 마법이 일어나는 커스텀 게임입니다.
 abstract class BonfireGame extends BaseGame implements BonfireGameInterface {
   static const INTERVAL_UPDATE_ORDER = 500;
 
-  /// Context used to access all Flutter power in your game.
+  /// 게임에서 Flutter의 모든 기능을 사용하기 위한 컨텍스트(context)입니다.
   @override
   final BuildContext context;
 
-  /// Represents the character controlled by the user in the game. Instances of
-  ///  this class has actions and movements ready to be used and configured.
+  /// 게임에서 사용자가 조작하는 캐릭터를 나타냅니다.
+  /// 이 클래스의 인스턴스는 바로 사용할 수 있도록 미리 준비된 동작(actions)과 이동(movements)을 가지고 있습니다.
   @override
   final Player? player;
 
-  /// The way you can draw things like life bars, stamina and settings.
-  /// In another words, anything that you may add to the interface to the game.
+  /// 체력바, 스테미나, 설정 등 게임 인터페이스에 추가할 요소들을 그리는 방식을 정의합니다.
+  /// 즉, 게임 인터페이스에 추가될 수 있는 모든 것을 의미합니다.
   @override
   final GameInterface? interface;
 
-  /// Represents a map (or world) where the game occurs.
+  /// 게임이 진행되는 맵(또는 월드)을 나타냅니다.
   @override
   final GameMap map;
 
-  /// The player-controlling component.
+  /// 플레이어를 조작하는 컴포넌트입니다.
   @override
   final List<PlayerController>? playerControllers;
 
-  /// Background of the game. This can be a color or custom component
+  /// 게임의 배경입니다. 색상 또는 커스텀 컴포넌트가 될 수 있습니다.
   final GameBackground? background;
 
-  /// Cache of visible components by type
+  /// 타입별 가시(visible) 컴포넌트의 캐시입니다.
   final Map<Type, List<GameComponent>> _visibleComponentsCache = {};
 
-  /// Used to draw area collision in objects.
+  /// 오브젝트의 충돌 영역(area collision)을 그리는 데 사용됩니다.
   @override
   final bool showCollisionArea;
 
-  /// Color of the collision area when `showCollisionArea` is true
+  /// `showCollisionArea`가 true일 때 충돌 영역의 색상입니다.
   @override
   final Color? collisionAreaColor;
 
-  /// Used to configure lighting in the game
+  /// 게임의 조명(lighting) 설정에 사용됩니다.
   final Color? lightingColorGame;
 
   @override
@@ -90,12 +90,11 @@ abstract class BonfireGame extends BaseGame implements BonfireGameInterface {
     throw Exception('Is forbiden updade camera');
   }
 
-  /// variable that keeps the highest rendering priority per frame.
-  ///  This is used to determine the order in which to render the `interface`,
-  ///  `lighting` and `joystick`
+  /// 프레임당 가장 높은 렌더링 우선순위를 유지하는 변수입니다.
+  /// `interface`, `lighting`, `joystick`의 렌더링 순서를 결정하는 데 사용됩니다.
   int _highestPriority = 1000000;
 
-  /// Get of the _highestPriority
+  /// `_highestPriority`의 게터(getter)입니다.
   @override
   int get highestPriority => _highestPriority;
 
@@ -279,7 +278,7 @@ abstract class BonfireGame extends BaseGame implements BonfireGameInterface {
     return camera.canSee(c);
   }
 
-  /// Use this method to change default observer of the Joystick events.
+  /// 조이스틱(joystick) 이벤트의 기본 옵저버(observer)를 변경하려면 이 메서드를 사용하세요.
   @override
   void addJoystickObserver(
     PlayerControllerListener target, {
@@ -348,13 +347,13 @@ abstract class BonfireGame extends BaseGame implements BonfireGameInterface {
     return world.addAll(components);
   }
 
-  /// reorder components by priority
+  /// 우선순위에 따라 컴포넌트 순서를 재정렬합니다.
   void _updateOrderPriority() {
     world.rebalanceChildren();
     _highestPriority = world.children.last.priority;
   }
 
-  /// Used to generate numbers to create your animations or anythings
+  /// 애니메이션 등 다양한 용도로 사용할 값을 생성하는 데 사용됩니다.
   @override
   ValueGeneratorComponent generateValues(
     Duration duration, {

@@ -15,7 +15,7 @@ import 'package:bonfire/util/extensions/game_component_extensions.dart';
 /// on 16/05/22
 
 mixin TileRecognizer on GameComponent {
-  /// Method that checks what type map tile is currently
+  /// 현재 아래에 있는 맵 타일의 타입을 확인하는 메서드입니다.
   String? tileTypeBelow() {
     final list = tileTypeListBelow();
     if (list.isNotEmpty) {
@@ -24,7 +24,7 @@ mixin TileRecognizer on GameComponent {
     return null;
   }
 
-  /// Method that checks what types map tile is currently
+  /// 현재 아래에 있는 맵 타일의 타입 목록을 확인하는 메서드입니다.
   List<String> tileTypeListBelow() {
     if (!hasGameRef) {
       return [];
@@ -36,7 +36,7 @@ mixin TileRecognizer on GameComponent {
     return [];
   }
 
-  /// Method that checks what properties map tile is currently
+  /// 현재 아래에 있는 맵 타일의 속성을 확인하는 메서드입니다.
   Map<String, dynamic>? tilePropertiesBelow() {
     final list = tilePropertiesListBelow();
     if (list?.isNotEmpty == true) {
@@ -46,7 +46,7 @@ mixin TileRecognizer on GameComponent {
     return null;
   }
 
-  /// Method that checks what properties list map tile is currently
+  /// 현재 아래에 있는 맵 타일의 속성 목록을 확인하는 메서드입니다.
   List<Map<String, dynamic>>? tilePropertiesListBelow() {
     if (!hasGameRef) {
       return null;

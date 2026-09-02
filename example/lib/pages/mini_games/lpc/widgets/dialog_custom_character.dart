@@ -45,20 +45,20 @@ class _DialogCustomCharacterState extends State<DialogCustomCharacter> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Body'),
+            const Text('체형'),
             const SizedBox(
               height: 10,
             ),
             Row(
               children: [
                 _buildLabel(
-                  'Light',
+                  '밝은 피부',
                   LPCBodyEnum.light,
                   status.body,
                   _updateBody,
                 ),
                 _buildLabel(
-                  'Brown',
+                  '갈색 피부',
                   LPCBodyEnum.brown,
                   status.body,
                   _updateBody,
@@ -68,13 +68,13 @@ class _DialogCustomCharacterState extends State<DialogCustomCharacter> {
             Row(
               children: [
                 _buildLabel(
-                  'Skeleton',
+                  '해골',
                   LPCBodyEnum.skeleton,
                   status.body,
                   _updateBody,
                 ),
                 _buildLabel(
-                  'Orc',
+                  '오크',
                   LPCBodyEnum.orc,
                   status.body,
                   _updateBody,
@@ -84,26 +84,26 @@ class _DialogCustomCharacterState extends State<DialogCustomCharacter> {
             const SizedBox(
               height: 20,
             ),
-            const Text('Hair'),
+            const Text('헤어'),
             const SizedBox(
               height: 10,
             ),
             Row(
               children: [
                 _buildLabel(
-                  'Empty',
+                  '없음',
                   LPCHairEnum.empty,
                   status.hair,
                   _updateHair,
                 ),
                 _buildLabel(
-                  'Single',
+                  '짧은',
                   LPCHairEnum.single,
                   status.hair,
                   _updateHair,
                 ),
                 _buildLabel(
-                  'Curly',
+                  '곱슬',
                   LPCHairEnum.curly,
                   status.hair,
                   _updateHair,
@@ -113,13 +113,13 @@ class _DialogCustomCharacterState extends State<DialogCustomCharacter> {
             Row(
               children: [
                 _buildLabel(
-                  'LongKNot',
+                  '긴 매듭',
                   LPCHairEnum.longknot,
                   status.hair,
                   _updateHair,
                 ),
                 _buildLabel(
-                  'XLong',
+                  '초긴',
                   LPCHairEnum.xlong,
                   status.hair,
                   _updateHair,
@@ -129,19 +129,19 @@ class _DialogCustomCharacterState extends State<DialogCustomCharacter> {
             const SizedBox(
               height: 20,
             ),
-            const Text('Equipments'),
+            const Text('장비'),
             const SizedBox(
               height: 10,
             ),
             Row(
               children: [
-                _buildCheckBox('Helm', status.withHelm, (value) {
+                _buildCheckBox('투구', status.withHelm, (value) {
                   setState(() {
                     status = status.copyWith(withHelm: value);
                   });
                   _updateCharacter();
                 }),
-                _buildCheckBox('Chest', status.withChest, (value) {
+                _buildCheckBox('갑옷', status.withChest, (value) {
                   setState(() {
                     status = status.copyWith(withChest: value);
                   });
@@ -151,13 +151,13 @@ class _DialogCustomCharacterState extends State<DialogCustomCharacter> {
             ),
             Row(
               children: [
-                _buildCheckBox('Leg', status.withLeg, (value) {
+                _buildCheckBox('다리', status.withLeg, (value) {
                   setState(() {
                     status = status.copyWith(withLeg: value);
                   });
                   _updateCharacter();
                 }),
-                _buildCheckBox('Gloves', status.withGloves, (value) {
+                _buildCheckBox('장갑', status.withGloves, (value) {
                   setState(() {
                     status = status.copyWith(withGloves: value);
                   });
@@ -167,13 +167,13 @@ class _DialogCustomCharacterState extends State<DialogCustomCharacter> {
             ),
             Row(
               children: [
-                _buildCheckBox('Arms', status.withArms, (value) {
+                _buildCheckBox('팔', status.withArms, (value) {
                   setState(() {
                     status = status.copyWith(withArms: value);
                   });
                   _updateCharacter();
                 }),
-                _buildCheckBox('Feet', status.withFeet, (value) {
+                _buildCheckBox('신발', status.withFeet, (value) {
                   setState(() {
                     status = status.copyWith(withFeet: value);
                   });

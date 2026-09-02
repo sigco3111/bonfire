@@ -19,7 +19,7 @@ import 'package:flutter/widgets.dart';
 
 final Map<String, OverlayEntry> _mapOverlayEntry = {};
 
-/// With this widget you can add a widget what follows a component in the game.
+/// 이 위젯을 사용하면 게임 내 컴포넌트를 따라가는(follow) 위젯을 추가할 수 있습니다.
 class FollowerWidget extends StatefulWidget {
   final GameComponent target;
   final Widget child;
@@ -33,7 +33,7 @@ class FollowerWidget extends StatefulWidget {
     this.alignment,
   });
 
-  /// Use this method to show a widget what follow the component
+  /// 컴포넌트를 따라가는 위젯을 표시할 때 이 메서드를 사용하세요.
   static void show({
     required String identify,
     required BuildContext context,
@@ -59,7 +59,7 @@ class FollowerWidget extends StatefulWidget {
     });
   }
 
-  /// Use this method to remove a widget what follow the component
+  /// 컴포넌트를 따라가는 위젯을 제거할 때 이 메서드를 사용하세요.
   static void remove(String identify) {
     if (_mapOverlayEntry.containsKey(identify)) {
       _mapOverlayEntry[identify]?.remove();
@@ -67,7 +67,7 @@ class FollowerWidget extends StatefulWidget {
     }
   }
 
-  /// Use this method to remove all widgets what follow the component.
+  /// 컴포넌트를 따라가는 모든 위젯을 제거할 때 이 메서드를 사용하세요.
   static void removeAll() {
     _mapOverlayEntry.forEach((key, value) {
       value.remove();
@@ -75,7 +75,7 @@ class FollowerWidget extends StatefulWidget {
     _mapOverlayEntry.clear();
   }
 
-  /// Use this method to check if is visible widget with your `identify`.
+  /// `identify`에 해당하는 위젯이 현재 보이는지 확인할 때 이 메서드를 사용하세요.
   static bool isVisible(String identify) {
     return _mapOverlayEntry.containsKey(identify);
   }

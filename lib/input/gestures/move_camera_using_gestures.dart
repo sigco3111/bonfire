@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/gestures.dart';
 
-/// Mixin used to move camera with gestures (touch or mouse)
+/// 제스처(터치 또는 마우스)로 카메라를 이동할 때 사용하는 믹스인입니다.
 mixin MoveCameraUsingGesture on GameComponent {
   Vector2 _startPoint = Vector2.zero();
   Vector2 _startCameraPosition = Vector2.zero();

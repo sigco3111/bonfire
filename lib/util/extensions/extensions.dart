@@ -60,7 +60,7 @@ extension RectExt on Rect {
     return true;
   }
 
-  /// Returns a new rectangle with edges moved outwards by the given delta.
+  /// 주어진 델타(delta)만큼 가장자리를 바깥쪽으로 이동시킨 새로운 사각형을 반환합니다.
   Rect inflatexy(double deltaX, double deltaY) {
     return Rect.fromLTRB(
       left - deltaX,
@@ -70,7 +70,7 @@ extension RectExt on Rect {
     );
   }
 
-  /// Returns a new rectangle with edges moved inwards by the given delta.
+  /// 주어진 델타(delta)만큼 가장자리를 안쪽으로 이동시킨 새로운 사각형을 반환합니다.
   Rect deflatexy(double deltaX, double deltaY) => inflatexy(-deltaX, -deltaY);
 
   Vector2 get centerVector2 => Vector2(left + width / 2.0, top + height / 2.0);

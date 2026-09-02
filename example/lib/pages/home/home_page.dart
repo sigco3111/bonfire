@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text('Bonfire examples'),
+        title: const Text('Bonfire 예제'),
       ),
       drawer: HomeDrawer(
         itemSelected: itemSelected,
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   child: const Text(
-                    'Source code',
+                    '소스 코드',
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -111,32 +111,41 @@ class _HomePageState extends State<HomePage> {
     return [
       SectionDrawer(
         itens: [
-          ItemDrawer(name: 'Home', builder: (_) => const HomeContent()),
+          ItemDrawer(
+            id: 'home',
+            name: '홈',
+            builder: (_) => const HomeContent(),
+          ),
         ],
       ),
       SectionDrawer(
-        name: 'Map',
+        id: 'map',
+        name: '맵',
         itens: [
           ItemDrawer(
-            name: 'Using Tiled',
+            id: 'tiled',
+            name: 'Tiled 사용',
             builder: (_) => const TiledPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/map/tiled',
           ),
           ItemDrawer(
-            name: 'Using Tiled url',
+            id: 'tiled_url',
+            name: 'Tiled URL 사용',
             builder: (_) => const TiledNetworkPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/map/tiled',
           ),
           ItemDrawer(
-            name: 'Using Spritefusion',
+            id: 'spritefusion',
+            name: 'Spritefusion 사용',
             builder: (_) => const SpritefusionPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/map/spritefusion',
           ),
           ItemDrawer(
-            name: 'Using matrix',
+            id: 'matrix',
+            name: '매트릭스 사용',
             builder: (_) => const TerrainBuilderPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/map/terrain_builder',
@@ -144,40 +153,47 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       SectionDrawer(
-        name: 'Input',
+        id: 'input',
+        name: '입력',
         itens: [
           ItemDrawer(
-            name: 'TapGesture',
+            id: 'tap',
+            name: '탭 동작',
             builder: (_) => const TapGesturePage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/input/tap',
           ),
           ItemDrawer(
-            name: 'DragGesture',
+            id: 'drag',
+            name: '드래그 동작',
             builder: (_) => const DragGesturePage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/input/drag',
           ),
           ItemDrawer(
-            name: 'MoveCamera',
+            id: 'move_camera',
+            name: '카메라 이동',
             builder: (_) => const MoveCameraPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/input/move_camera_mouse',
           ),
           ItemDrawer(
-            name: 'Mouse',
+            id: 'mouse',
+            name: '마우스',
             builder: (_) => const MouseInputPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/input/mouse',
           ),
           ItemDrawer(
-            name: 'Keyboard',
+            id: 'keyboard',
+            name: '키보드',
             builder: (_) => const KeyboardPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/input/keyboard',
           ),
           ItemDrawer(
-            name: 'PlayerControllers',
+            id: 'player_controllers',
+            name: '플레이어 컨트롤러',
             builder: (_) => const PlayerControllersPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/player_controllers',
@@ -185,22 +201,26 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       SectionDrawer(
-        name: 'Player',
+        id: 'player',
+        name: '플레이어',
         itens: [
           ItemDrawer(
-            name: 'SimplePlayer',
+            id: 'simple_player',
+            name: '단순 플레이어',
             builder: (_) => const SimplePlayerPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/player/simple',
           ),
           ItemDrawer(
-            name: 'RotationPlayer',
+            id: 'rotation_player',
+            name: '회전 플레이어',
             builder: (_) => const RotationPlayerPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/player/rotation',
           ),
           ItemDrawer(
-            name: 'PlatformPlayer',
+            id: 'platform_player',
+            name: '플랫폼 플레이어',
             builder: (_) => const PlatformPlayerPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/player/platform',
@@ -210,7 +230,8 @@ class _HomePageState extends State<HomePage> {
       SectionDrawer(
         itens: [
           ItemDrawer(
-            name: 'Enemy',
+            id: 'enemy',
+            name: '적',
             builder: (_) => const EnemyPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/enemy',
@@ -220,7 +241,8 @@ class _HomePageState extends State<HomePage> {
       SectionDrawer(
         itens: [
           ItemDrawer(
-            name: 'Forces',
+            id: 'forces',
+            name: '힘',
             builder: (_) => const ForcesPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/forces',
@@ -230,7 +252,8 @@ class _HomePageState extends State<HomePage> {
       SectionDrawer(
         itens: [
           ItemDrawer(
-            name: 'BlockMovementCollision',
+            id: 'block_movement_collision',
+            name: '이동 차단 충돌',
             builder: (_) => const CollisionPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/forces',
@@ -240,7 +263,8 @@ class _HomePageState extends State<HomePage> {
       SectionDrawer(
         itens: [
           ItemDrawer(
-            name: 'Lighting',
+            id: 'lighting',
+            name: '조명',
             builder: (_) => const LightingPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/lighting',
@@ -250,7 +274,8 @@ class _HomePageState extends State<HomePage> {
       SectionDrawer(
         itens: [
           ItemDrawer(
-            name: 'PathFinding',
+            id: 'path_finding',
+            name: '경로 탐색',
             builder: (_) => const PathFindingPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/path_finding',
@@ -260,7 +285,8 @@ class _HomePageState extends State<HomePage> {
       SectionDrawer(
         itens: [
           ItemDrawer(
-            name: 'Shader',
+            id: 'shader',
+            name: '셰이더',
             builder: (_) => const ShaderPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/shader',
@@ -270,23 +296,27 @@ class _HomePageState extends State<HomePage> {
       SectionDrawer(
         itens: [
           ItemDrawer(
-            name: 'Performance',
+            id: 'performance',
+            name: '성능',
             builder: (_) => const PerformanceGame(),
             codeUrl: '',
           ),
         ],
       ),
       SectionDrawer(
-        name: 'Parallax',
+        id: 'parallax',
+        name: '시차 스크롤',
         itens: [
           ItemDrawer(
-            name: 'Parallax',
+            id: 'parallax',
+            name: '시차 스크롤',
             builder: (_) => const ParallaxPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/parallax/flame',
           ),
           ItemDrawer(
-            name: 'CameraParallax',
+            id: 'camera_parallax',
+            name: '카메라 시차',
             builder: (_) => const BonfireParallaxPage(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/blob/develop/example/lib/pages/parallax/bonfire',
@@ -294,34 +324,40 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       SectionDrawer(
-        name: 'Mini games',
+        id: 'mini_games',
+        name: '미니 게임',
         itens: [
           ItemDrawer(
-            name: 'Map by Tiled',
+            id: 'tiled_map',
+            name: 'Tiled 맵',
             builder: (_) => const GameTiledMap(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/mini_games',
           ),
           ItemDrawer(
-            name: 'Topdown game',
+            id: 'topdown_game',
+            name: '탑다운 게임',
             builder: (_) => const TopDownGame(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/mini_games',
           ),
           ItemDrawer(
-            name: 'Platform game',
+            id: 'platform_game',
+            name: '플랫폼 게임',
             builder: (_) => const PlatformGame(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/mini_games',
           ),
           ItemDrawer(
-            name: 'Multi scenario game',
+            id: 'multi_scenario',
+            name: '다중 시나리오 게임',
             builder: (_) => const MultiScenario(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/mini_games',
           ),
           ItemDrawer(
-            name: 'Random Map',
+            id: 'random_map',
+            name: '무작위 맵',
             builder: (_) => RandomMapGame(
               size: Vector2(100, 100),
             ),
@@ -329,13 +365,15 @@ class _HomePageState extends State<HomePage> {
                 'https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/mini_games',
           ),
           ItemDrawer(
-            name: 'Manual map game',
+            id: 'manual_map',
+            name: '수동 맵 게임',
             builder: (_) => const GameManualMap(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/mini_games',
           ),
           ItemDrawer(
-            name: 'Simple',
+            id: 'simple',
+            name: '단순 예제',
             builder: (_) => const SimpleExampleGame(),
             codeUrl:
                 'https://github.com/RafaelBarbosatec/bonfire/tree/develop/example/lib/pages/mini_games',

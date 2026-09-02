@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class BarrelDrag extends GameDecoration with DragGesture, Movement {
   late TextPaint _textPaint;
-  final String text = 'Drag me';
+  final String text = '드래그하세요';
   BarrelDrag({required Vector2 position})
       : super.withSprite(
           sprite: CommonSpriteSheet.barrelSprite,

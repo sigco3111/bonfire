@@ -57,8 +57,7 @@ class Wizard extends SimpleNpc with BlockMovementCollision, TapGesture {
         Say(
           text: [
             const TextSpan(
-              text:
-                  ' Would you tell me, please ...  which way I ought to go from here? ',
+              text: ' 저기... 혹시 여기서부터 어디로 가야 할지 알려주실 수 있나요? ',
             )
           ],
           person: SizedBox(
@@ -70,7 +69,7 @@ class Wizard extends SimpleNpc with BlockMovementCollision, TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: 'That depends a good deal on where you want to get to.',
+              text: '그건 어디로 가고 싶으신가에 따라 크게 달라지죠.',
             ),
           ],
           person: SizedBox(
@@ -83,7 +82,7 @@ class Wizard extends SimpleNpc with BlockMovementCollision, TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: ' I don\'t much care where. ',
+              text: ' 저는 별로 상관없어요. ',
             ),
           ],
           person: SizedBox(
@@ -95,7 +94,7 @@ class Wizard extends SimpleNpc with BlockMovementCollision, TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: 'Then it doesn\'t much matter which way you go.',
+              text: '그럼 어느 쪽으로 가든 크게 상관없겠네요.',
             ),
           ],
           person: SizedBox(

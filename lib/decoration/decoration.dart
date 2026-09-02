@@ -3,11 +3,10 @@ import 'dart:ui';
 
 import 'package:bonfire/bonfire.dart';
 
-/// This component represents anything you want to add to the scene, it can be
-/// a simple "barrel" halfway to an NPC that you can use to interact with your
-/// player.
+/// 이 컴포넌트는 씬(scene)에 추가하고 싶은 모든 것을 나타냅니다.
+/// 간단한 "배럴"부터 플레이어와 상호작용할 수 있는 NPC까지 무엇이든 될 수 있습니다.
 ///
-/// You can use ImageSprite or Animation[FlameAnimation.Animation]
+/// ImageSprite 또는 Animation[FlameAnimation.Animation]을 사용할 수 있습니다.
 class GameDecoration extends AnimatedGameObject {
   GameDecoration({
     required super.position,

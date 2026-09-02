@@ -32,7 +32,7 @@ class ButtonInterface extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: ElevatedButton(
-          child: const Text('Edit Character'),
+          child: const Text('캐릭터 편집'),
           onPressed: () {
             if (game.player != null) {
               (game.player as LPCPlayer).showEditCharacter();

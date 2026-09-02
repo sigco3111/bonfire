@@ -5,13 +5,13 @@ import 'package:flutter/widgets.dart';
 enum PersonSayDirection { LEFT, RIGHT }
 
 class Say {
-  /// List of TextSpans to be shown in a TalkDialog.
-  /// Example:
+  /// TalkDialog에 표시될 TextSpan들의 목록입니다.
+  /// 예시:
   /// ```dart
   /// [
-  ///   TextSpan(text: 'New'),
-  ///   TextSpan(text: ' item ', style: TextStyle(color: Colors.red)),
-  ///   TextSpan(text: 'unlocked!'),
+  ///   TextSpan(text: '새로운'),
+  ///   TextSpan(text: ' 아이템 ', style: TextStyle(color: Colors.red)),
+  ///   TextSpan(text: '잠금 해제!'),
   /// ]
   /// ```
   final List<TextSpan> text;
@@ -24,11 +24,11 @@ class Say {
   final Widget? header;
   final Widget? bottom;
 
-  /// How long each character takes to be shown, in milliseconds.
-  /// Defaults to 50.
+  /// 각 문자가 표시되는 데 걸리는 시간(밀리초 단위)입니다.
+  /// 기본값은 50입니다.
   final int? speed;
 
-  /// Create a text animation to be shown inside `TalkDialog.show`
+  /// `TalkDialog.show` 안에서 표시될 텍스트 애니메이션을 생성합니다.
   Say({
     required this.text,
     this.personSayDirection = PersonSayDirection.LEFT,

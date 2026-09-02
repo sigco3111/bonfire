@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 class BarrelShowKeyboardInput extends GameDecoration
     with KeyboardEventListener {
   late TextPaint _textPaint;
-  final String base = 'Use your keyboard: \n {input}';
+  final String base = '키보드를 사용해보세요: \n {input}';
   String text = '';
   String input = '';
   BarrelShowKeyboardInput({required Vector2 position})

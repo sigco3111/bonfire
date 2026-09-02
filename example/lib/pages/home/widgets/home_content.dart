@@ -22,12 +22,12 @@ class HomeContent extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  'What is Bonfire?',
+                  'Bonfire가 무엇인가요?',
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Bonfire is a game development framework that enables the creation of\nFlutter/Flame games in a more easy, objective and fast way!',
+                  'Bonfire는 게임 개발 프레임워크로, 더 쉽고 명료하며 빠른 방식으로\nFlutter/Flame 게임을 만들 수 있게 해줍니다!',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Colors.white.withOpacity(0.7),
                       ),

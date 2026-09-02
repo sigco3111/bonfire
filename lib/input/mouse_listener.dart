@@ -3,42 +3,42 @@ import 'package:flutter/gestures.dart';
 
 enum MouseButton { left, right, middle, unknow }
 
-/// Mixin responsible to listen mouse gestures
+/// 마우스 제스처를 수신하는 역할을 하는 믹스인입니다.
 mixin MouseEventListener on GameComponent {
   bool enableMouseGesture = true;
   int _pointer = -1;
   bool _hoverEnter = false;
   MouseButton? _buttonClicked;
 
-  /// Listen to the mouse cursor across the screen
+  /// 화면 전반에 걸친 마우스 커서의 이동을 수신합니다.
   void onMouseHoverScreen(int pointer, Vector2 position) {}
 
-  /// Listen to the mouse move with some button clicked across the screen
+  /// 화면 전반에서 마우스 버튼이 눌린 상태로 이동하는 것을 수신합니다.
   void onMouseMoveScreen(int pointer, Vector2 position, MouseButton button) {}
 
-  /// Listen when the mouse cursor hover in this component
+  /// 마우스 커서가 이 컴포넌트 위에 올라왔을 때를 수신합니다.
   void onMouseHoverEnter(int pointer, Vector2 position) {}
 
-  /// Listen when the mouse cursor passes outside this component
+  /// 마우스 커서가 이 컴포넌트 밖으로 벗어났을 때를 수신합니다.
   void onMouseHoverExit(int pointer, Vector2 position) {}
 
-  /// Listen when use scroll of the mouse across the screen
+  /// 화면 전반에서 마우스 휠 스크롤을 사용할 때를 수신합니다.
   void onMouseScrollScreen(
     int pointer,
     Vector2 position,
     Vector2 scrollDelta,
   ) {}
 
-  /// Listen when use scroll of the mouse in your component
+  /// 컴포넌트 안에서 마우스 휠 스크롤을 사용할 때를 수신합니다.
   void onMouseScroll(int pointer, Vector2 position, Vector2 scrollDelta) {}
 
-  /// Listen when mouse is clicked down in your component
+  /// 컴포넌트 안에서 마우스가 눌렸을 때를 수신합니다.
   void onMouseTapDown(int pointer, Vector2 position, MouseButton button) {}
 
-  /// Listen when mouse is clicked up in your component
+  /// 컴포넌트 안에서 마우스가 떼어졌을 때를 수신합니다.
   void onMouseTapUp(int pointer, Vector2 position, MouseButton button) {}
 
-  // Listen when mouse clicked in your component
+  // 컴포넌트 안에서 마우스가 클릭되었을 때를 수신합니다.
   void onMouseTap(MouseButton button);
   void onMouseCancel() {}
 
@@ -126,7 +126,7 @@ mixin MouseEventListener on GameComponent {
     return super.handlerPointerUp(event);
   }
 
-  // Listen when mouse is clicked down in screen
+  // 화면에서 마우스가 눌렸을 때를 수신합니다.
   void onMouseScreenTapDown(int pointer, Vector2 position, MouseButton button) {
     var realPosition = position;
     if (!isHud) {
@@ -139,7 +139,7 @@ mixin MouseEventListener on GameComponent {
     }
   }
 
-  // Listen when mouse is clicked up in screen
+  // 화면에서 마우스가 떼어졌을 때를 수신합니다.
   void onMouseScreenTapUp(int pointer, Vector2 position) {
     var realPosition = position;
     if (!isHud) {

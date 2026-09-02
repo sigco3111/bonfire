@@ -9,54 +9,52 @@ class TypeWriter extends StatefulWidget {
   final int speed;
   final bool autoStart;
 
-  /// How the text should be aligned horizontally.
+  /// 텍스트를 수평 방향으로 어떻게 정렬할지 지정합니다.
   final TextAlign textAlign;
 
-  /// The directionality of the text.
+  /// 텍스트의 방향성(directionality)입니다.
   ///
-  /// This decides how [textAlign] values like [TextAlign.start] and
-  /// [TextAlign.end] are interpreted.
+  /// 이는 [TextAlign.start] / [TextAlign.end] 같은 [textAlign] 값을
+  /// 어떻게 해석할지 결정합니다.
   ///
-  /// This is also used to disambiguate how to render bidirectional text. For
-  /// example, if the [text] is an English phrase followed by a Hebrew phrase,
-  /// in a [TextDirection.ltr] context the English phrase will be on the left
-  /// and the Hebrew phrase to its right, while in a [TextDirection.rtl]
-  /// context, the English phrase will be on the right and the Hebrew phrase on
-  /// its left.
+  /// 또한 양방향(bidirectional) 텍스트 렌더링의 모호성을 해소하는 데도 사용됩니다.
+  /// 예를 들어, [text]가 영어 구절 뒤에 히브리어 구절이 오는 경우,
+  /// [TextDirection.ltr] 컨텍스트에서는 영어 구절이 왼쪽에, 히브리어 구절이 오른쪽에
+  /// 위치하고, [TextDirection.rtl] 컨텍스트에서는 영어 구절이 오른쪽에,
+  /// 히브리어 구절이 왼쪽에 위치합니다.
   ///
-  /// Defaults to the ambient [Directionality], if any. If there is no ambient
-  /// [Directionality], then this must not be null.
+  /// 별도로 지정하지 않으면 주변 [Directionality]에서 상속됩니다.
+  /// 주변 [Directionality]가 없는 경우 null이 될 수 없습니다.
   final TextDirection? textDirection;
 
-  /// Whether the text should break at soft line breaks.
+  /// 텍스트를 부드러운 줄 바꿈(soft line break)에서 끊을지 여부입니다.
   ///
-  /// If false, the glyphs in the text will be positioned as if there was unlimited horizontal space.
+  /// false인 경우 텍스트 글리프(glyph)는 수평 공간이 무한한 것처럼 배치됩니다.
   final bool softWrap;
 
-  /// How visual overflow should be handled.
+  /// 시각적 오버플로(overflow)를 어떻게 처리할지 설정합니다.
   final TextOverflow overflow;
 
-  /// The number of font pixels for each logical pixel.
+  /// 각 논리 픽셀(logical pixel)당 폰트 픽셀(font pixel)의 수입니다.
   ///
-  /// For example, if the text scale factor is 1.5, text will be 50% larger than
-  /// the specified font size.
+  /// 예를 들어 텍스트 스케일 팩터(text scale factor)가 1.5이면,
+  /// 텍스트는 지정된 폰트 크기보다 50% 크게 표시됩니다.
   final TextScaler textScaler;
 
-  /// An optional maximum number of lines for the text to span, wrapping if necessary.
-  /// If the text exceeds the given number of lines, it will be truncated according
-  /// to [overflow].
+  /// 텍스트가 차지할 수 있는 최대 줄 수(선택 사항)입니다.
+  /// 필요에 따라 줄 바꿈되며, 지정된 줄 수를 초과하면
+  /// [overflow] 설정에 따라 잘립니다.
   ///
-  /// If this is 1, text will not wrap. Otherwise, text will be wrapped at the
-  /// edge of the box.
+  /// 1로 지정하면 줄 바꿈이 일어나지 않습니다. 그 외에는 박스 경계에서 줄 바꿈됩니다.
   final int? maxLines;
 
-  /// Used to select a font when the same Unicode character can
-  /// be rendered differently, depending on the locale.
+  /// 동일한 유니코드 문자라도 로케일(locale)에 따라 다르게 렌더링될 수 있는 경우
+  /// 사용할 폰트를 선택하는 데 사용됩니다.
   ///
-  /// It's rarely necessary to set this property. By default its value
-  /// is inherited from the enclosing app with `Localizations.localeOf(context)`.
+  /// 이 프로퍼티를 별도로 설정할 일은 거의 없습니다. 기본값은
+  /// `Localizations.localeOf(context)`로 둘러싼 앱에서 상속됩니다.
   ///
-  /// See [RenderParagraph.locale] for more information.
+  /// 자세한 내용은 [RenderParagraph.locale]을 참고하세요.
   final Locale? locale;
 
   /// {@macro flutter.painting.textPainter.strutStyle}

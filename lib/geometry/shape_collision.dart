@@ -6,8 +6,8 @@ import 'package:bonfire/geometry/rectangle.dart';
 import 'package:bonfire/geometry/shape.dart';
 import 'package:flame/extensions.dart';
 
-/// Class responsible to verify collision of the Shapes.
-/// Code based from: https://github.com/hahafather007/collision_check
+/// 도형(Shape)들의 충돌을 검증하는 클래스입니다.
+/// 참고 코드: https://github.com/hahafather007/collision_check
 class ShapeCollision {
   static bool isCollision(Shape a, Shape b) {
     if (a is RectangleShape) {
@@ -184,7 +184,7 @@ class ShapeCollision {
     return false;
   }
 
-  /// Get [o] point distance [o1] and [o2] line segment distance
+  /// 점 [o]와 선분 [o1]~[o2] 사이의 최단 거리를 구합니다.
   /// https://blog.csdn.net/yjukh/article/details/5213577
   static double getNearestDistance(Vector2 o1, Vector2 o2, Vector2 o) {
     if (o1 == o || o2 == o) {
@@ -209,7 +209,7 @@ class ShapeCollision {
     return 2 * area / c;
   }
 
-  /// Obtain the [double] value with 4 decimal places to avoid errors caused by precision problems
+  /// 정밀도 문제로 인한 오차를 피하기 위해 [double] 값을 소수점 4자리까지 자릅니다.
   static double _getFixDouble(double value) {
     return double.parse(value.toStringAsFixed(4));
   }

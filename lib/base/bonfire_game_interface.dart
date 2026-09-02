@@ -42,68 +42,68 @@ abstract class BonfireGameInterface {
   // ignore: invalid_use_of_internal_member
   OverlayManager get overlays;
 
-  /// Used to pause the engine.
+  /// 엔진(Engine)을 일시 정지할 때 사용됩니다.
   void pauseEngine();
 
-  /// Returns is the engine if currently paused or running
+  /// 엔진이 현재 일시 정지 상태인지 실행 중인지 여부를 반환합니다.
   bool get paused;
 
-  /// Used to resume the engine.
+  /// 엔진(Engine)을 재개할 때 사용됩니다.
   void resumeEngine();
 
-  /// Used to add component in the game.
+  /// 게임에 컴포넌트를 추가할 때 사용됩니다.
   FutureOr<void> add(Component component);
 
-  /// Used to add component list in the game.
+  /// 게임에 컴포넌트 리스트를 추가할 때 사용됩니다.
   Future<void> addAll(List<Component> components);
 
-  /// Used to get visible "Components".
+  /// 화면에 보이는(visible) "Components"를 가져올 때 사용됩니다.
   Iterable<T> visibles<T extends GameComponent>();
 
-  /// Used to get all "Enemies" or oly visibles.
+  /// 모든 "Enemies" 또는 보이는 것만 가져올 때 사용됩니다.
   Iterable<Enemy> enemies({bool onlyVisible = false});
 
-  /// Used to get living "Enemies" or oly visibles.
+  /// 살아있는 "Enemies" 또는 보이는 것만 가져올 때 사용됩니다.
   Iterable<Enemy> livingEnemies({bool onlyVisible = false});
 
-  /// Used to get all "Decoration" or oly visibles.
+  /// 모든 "Decoration" 또는 보이는 것만 가져올 때 사용됩니다.
   Iterable<GameDecoration> decorations({bool onlyVisible = false});
 
-  /// Used to get all "Attackables" or oly visibles.
+  /// 모든 "Attackables" 또는 보이는 것만 가져올 때 사용됩니다.
   Iterable<Attackable> attackables({bool onlyVisible = false});
 
-  /// Used to get all "ShapeHitbox".
+  /// 모든 "ShapeHitbox"를 가져올 때 사용됩니다.
   Iterable<ShapeHitbox> collisions({bool onlyVisible = false});
 
-  /// Used to find component by type visible or not.
+  /// 타입(type)으로 컴포넌트를 찾을 때 사용됩니다(가시/비가시 모두).
   Iterable<T> query<T extends GameComponent>({bool onlyVisible = false});
 
-  /// This  method convert word position to screen position
+  /// 월드 좌표(world position)를 화면 좌표(screen position)로 변환하는 메서드입니다.
   Vector2 worldToScreen(Vector2 worldPosition);
 
-  /// This  method convert screen position to word position
+  /// 화면 좌표(screen position)를 월드 좌표(world position)로 변환하는 메서드입니다.
   Vector2 screenToWorld(Vector2 screenPosition);
 
-  /// This  method convert viewport position to word position
+  /// 뷰포트 좌표(viewport position)를 월드 좌표(world position)로 변환하는 메서드입니다.
   Vector2 globalToViewportPosition(Vector2 position);
 
-  /// This  method convert viewport position to screen position
+  /// 뷰포트 좌표(viewport position)를 화면 좌표(screen position)로 변환하는 메서드입니다.
   Vector2 viewportPositionToGlobal(Vector2 position);
 
-  /// Used to check if a component is visible in the camera.
+  /// 컴포넌트가 카메라에 보이는지 확인할 때 사용됩니다.
   bool isVisibleInCamera(PositionComponent c);
 
-  /// Used to change Joystick listener. And move camera to new target.
+  /// 조이스틱 리스너를 변경하고, 카메라를 새로운 타겟으로 이동시킬 때 사용됩니다.
   void addJoystickObserver(
     PlayerControllerListener target, {
     bool cleanObservers = false,
     bool moveCameraToTarget = false,
   });
 
-  /// Used to get hud components.
+  /// hud 컴포넌트를 가져올 때 사용됩니다.
   Iterable<T> queryHud<T extends Component>();
 
-  /// Used to add hud component in the game.
+  /// 게임에 hud 컴포넌트를 추가할 때 사용됩니다.
   FutureOr<void> addHud(Component component);
 
   RaycastResult<ShapeHitbox>? raycast(
@@ -131,7 +131,7 @@ abstract class BonfireGameInterface {
     List<RaycastResult<ShapeHitbox>>? out,
   });
 
-  /// Used to generate numbers to create your animations or anythings
+  /// 애니메이션 등 다양한 용도로 사용할 값을 생성하는 데 사용됩니다.
   ValueGeneratorComponent generateValues(
     Duration duration, {
     double begin = 0.0,

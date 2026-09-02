@@ -1,7 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flutter/widgets.dart';
 
-/// Component used to generate numbers using the gameLoop.
+/// gameLoop을 사용해 숫자 값을 생성하는 컴포넌트입니다.
 class ValueGeneratorComponent extends Component {
   bool _isFinished = false;
 

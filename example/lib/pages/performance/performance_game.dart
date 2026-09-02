@@ -50,7 +50,7 @@ class MyFpsLabel extends GameInterface {
   @override
   void onMount() {
     textCount = TextComponent(
-      text: 'COUNT: 0',
+      text: '개수: 0',
       position: Vector2(100, 0),
       textRenderer: TextPaint(
         style: const TextStyle(
@@ -66,7 +66,7 @@ class MyFpsLabel extends GameInterface {
 
   @override
   void update(double dt) {
-    textCount.text = 'COUNT: ${gameRef.query<MyEnemy>().length}';
+    textCount.text = '개수: ${gameRef.query<MyEnemy>().length}';
     super.update(dt);
   }
 }

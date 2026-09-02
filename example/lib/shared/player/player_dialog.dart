@@ -23,14 +23,14 @@ class PlayerDialog {
             Say(
               text: [
                 const TextSpan(
-                  text: 'Look at this! It seems that',
+                  text: '이거 보세요! 여긴',
                 ),
                 const TextSpan(
-                  text: ' I\'m not alone ',
+                  text: ' 혼자가 아닌 ',
                   style: TextStyle(color: Colors.red),
                 ),
                 const TextSpan(
-                  text: 'here...',
+                  text: '것 같네요...',
                 ),
               ],
               person: SizedBox(
@@ -42,17 +42,17 @@ class PlayerDialog {
             Say(
               text: [
                 const TextSpan(
-                  text: 'Lok Tar Ogr!',
+                  text: '로크 타르 오그르!',
                 ),
                 const TextSpan(
-                  text: ' Lok Tar Ogr! ',
+                  text: ' 로크 타르 오그르! ',
                   style: TextStyle(color: Colors.green),
                 ),
                 const TextSpan(
-                  text: ' Lok Tar Ogr! ',
+                  text: ' 로크 타르 오그르! ',
                 ),
                 const TextSpan(
-                  text: 'Lok Tar Ogr!',
+                  text: '로크 타르 오그르!',
                   style: TextStyle(color: Colors.green),
                 ),
               ],

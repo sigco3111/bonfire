@@ -5,10 +5,10 @@ import 'package:bonfire/bonfire.dart';
 enum MovementAxis { horizontal, vertical, withoutDiagonal, all }
 
 extension MovementExtensions on Movement {
-  /// This method move this component to target
-  /// Need use Movement mixin.
-  /// Method that bo used in [update] method.
-  /// return true if moved.
+  /// 이 컴포넌트를 타겟으로 이동시키는 메서드입니다.
+  /// Movement mixin을 사용해야 합니다.
+  /// [update] 메서드 안에서 호출되는 메서드입니다.
+  /// 이동에 성공하면 true를 반환합니다.
   bool moveTowardsTarget<T extends GameComponent>({
     required T target,
     void Function()? close,
@@ -109,8 +109,8 @@ extension MovementExtensions on Movement {
     return true;
   }
 
-  /// Checks whether the component is within range. If so, position yourself and keep your distance.
-  /// Method that bo used in [update] method.
+  /// 컴포넌트가 범위 안에 있는지 확인하고, 범위 안에 있으면 위치를 잡은 뒤 거리를 유지합니다.
+  /// [update] 메서드 안에서 호출되는 메서드입니다.
   bool positionsItselfAndKeepDistance<T extends GameComponent>(
     T target, {
     Function(T)? positioned,

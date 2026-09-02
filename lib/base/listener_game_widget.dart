@@ -27,58 +27,54 @@ typedef OverlayWidgetBuilder<T extends Game> = Widget Function(
 
 typedef GameFactory<T extends Game> = T Function();
 
-/// A [StatefulWidget] that is in charge of attaching a [Game] instance into the
-/// Flutter tree.
+/// [Game] 인스턴스를 Flutter 위젯 트리에 연결하는 역할을 하는 [StatefulWidget]입니다.
 class ListenerGameWidget<T extends Game> extends StatefulWidget {
-  /// The game instance which this widget will render, if the normal constructor
-  /// is used.
-  /// If the [ListenerGameWidget.controlled] constructor is used, this will
-  /// aways be `null`.
+  /// 일반 생성자가 사용된 경우, 이 위젯이 렌더링할 게임 인스턴스입니다.
+  /// [ListenerGameWidget.controlled] 생성자가 사용된 경우, 이 값은 항상 `null`이 됩니다.
   final T? game;
 
-  /// A function that creates a [Game] that this widget will render.
+  /// 이 위젯이 렌더링할 [Game]을 생성하는 함수입니다.
   final GameFactory<T>? gameFactory;
 
-  /// The text direction to be used in text elements in a game.
+  /// 게임 내 텍스트 요소에 사용될 텍스트 방향입니다.
   final TextDirection? textDirection;
 
-  /// Builder to provide a widget tree to be built while the Game's [Future]
-  /// provided via `Game.onLoad` and `Game.onMount` is not resolved.
-  /// By default this is an empty Container().
+  /// Game의 `Game.onLoad` 및 `Game.onMount`를 통해 제공된 [Future]가 해결될 때까지
+  /// 빌드될 위젯 트리를 제공하는 빌더입니다.
+  /// 기본값은 빈 Container()입니다.
   final GameLoadingWidgetBuilder? loadingBuilder;
 
-  /// If set, errors during the onLoad method will not be thrown
-  /// but instead this widget will be shown. If not provided, errors are
-  /// propagated up.
+  /// 설정되면 onLoad 메서드 중 발생하는 오류가 throw되지 않고,
+  /// 대신 이 위젯이 표시됩니다. 제공되지 않으면 오류가 상위로 전파됩니다.
   final GameErrorWidgetBuilder? errorBuilder;
 
-  /// Builder to provide a widget tree to be built between the game elements and
-  /// the background color provided via [Game.backgroundColor].
+  /// 게임 요소와 [Game.backgroundColor]를 통해 제공된 배경색 사이에
+  /// 빌드될 위젯 트리를 제공하는 빌더입니다.
   final WidgetBuilder? backgroundBuilder;
 
-  /// A map to show widgets overlay.
+  /// 오버레이 위젯을 표시하기 위한 맵입니다.
   ///
-  /// See also:
+  /// 참고:
   /// - [ListenerGameWidget]
   /// - [Game.overlays]
   final Map<String, OverlayWidgetBuilder<T>>? overlayBuilderMap;
 
-  /// The [FocusNode] to control the games focus to receive event inputs.
-  /// If omitted, defaults to an internally controlled focus node.
+  /// 이벤트 입력을 받기 위한 게임 포커스를 제어하는 [FocusNode]입니다.
+  /// 생략하면 내부에서 관리되는 기본 focus node가 사용됩니다.
   final FocusNode? focusNode;
 
-  /// Whether the [focusNode] requests focus once the game is mounted.
-  /// Defaults to true.
+  /// 게임이 마운트될 때 [focusNode]가 포커스를 요청할지 여부입니다.
+  /// 기본값은 true입니다.
   final bool autofocus;
 
   final MouseCursor? mouseCursor;
   final List<String>? initialActiveOverlays;
 
-  /// Renders a [game] in a flutter widget tree.
+  /// Flutter 위젯 트리에서 [game]을 렌더링합니다.
   ///
-  /// Ex:
+  /// 예:
   /// ```
-  /// // Inside a State...
+  /// // State 내부에서...
   /// late MyGameClass game;
   ///
   /// @override
@@ -87,7 +83,7 @@ class ListenerGameWidget<T extends Game> extends StatefulWidget {
   ///   game = MyGameClass();
   /// }
   /// ...
-  /// Widget build(BuildContext  context) {
+  /// Widget build(BuildContext context) {
   ///   return GameWidget(
   ///     game: game,
   ///   )
@@ -95,13 +91,12 @@ class ListenerGameWidget<T extends Game> extends StatefulWidget {
   /// ...
   /// ```
   ///
-  /// It is also possible to render layers of widgets over the game surface with
-  /// widget subtrees.
+  /// 위젯 서브트리로 게임 표면 위에 위젯 레이어를 렌더링할 수도 있습니다.
   ///
-  /// To do that a [overlayBuilderMap] should be provided. The visibility of
-  /// these overlays are controlled by [Game.overlays] property
+  /// 이를 위해서는 [overlayBuilderMap]을 제공해야 합니다. 이 오버레이들의 가시성은
+  /// [Game.overlays] 프로퍼티로 제어됩니다.
   ///
-  /// Ex:
+  /// 예:
   /// ```
   /// ...
   ///
@@ -112,7 +107,7 @@ class ListenerGameWidget<T extends Game> extends StatefulWidget {
   ///     game: game,
   ///     overlayBuilderMap: {
   ///       'PauseMenu': (ctx, game) {
-  ///         return Text('A pause menu');
+  ///         return Text('일시정지 메뉴');
   ///       },
   ///     },
   ///   )
@@ -137,13 +132,12 @@ class ListenerGameWidget<T extends Game> extends StatefulWidget {
     _initializeGame(game!);
   }
 
-  /// Whether the game should assume the behavior of a [RepaintBoundary],
-  /// defaults to `true`.
+  /// 게임이 [RepaintBoundary]의 동작을 가정해야 할지 여부이며, 기본값은 `true`입니다.
   final bool addRepaintBoundary;
 
-  /// Renders a [game] in a flutter widget tree alongside widgets overlays.
+  /// 위젯 오버레이와 함께 Flutter 위젯 트리에서 [game]을 렌더링합니다.
   ///
-  /// To use overlays, the game subclass has to be mixed with HasWidgetsOverlay.
+  /// 오버레이를 사용하려면 게임 서브클래스에 HasWidgetsOverlay가 mixin되어 있어야 합니다.
   @override
   ListenerGameWidgetState<T> createState() => ListenerGameWidgetState<T>();
 
@@ -183,26 +177,22 @@ class ListenerGameWidgetState<T extends Game>
 
   late FocusNode _focusNode;
 
-  /// The number of `build()` functions currently executing.
+  /// 현재 실행 중인 `build()` 함수의 수입니다.
   int _buildDepth = 0;
 
-  /// If true, then a fresh build will be scheduled after the current one
-  /// completes. This should only be set to true when the [_buildDepth] is
-  /// non-zero.
+  /// true인 경우, 현재 빌드가 완료된 직후 새로운 빌드가 예약됩니다.
+  /// 이는 [_buildDepth]가 0이 아닐 때에만 true로 설정되어야 합니다.
   bool _requiresRebuild = false;
 
-  /// Helper method that arranges to have `_buildDepth > 0` while the [build] is
-  /// executing, and then schedules a re-build if [_requiresRebuild] flag was
-  /// raised during the build.
+  /// [build]가 실행되는 동안 `_buildDepth > 0`이 되도록 arranging하고,
+  /// 빌드 중에 [_requiresRebuild] 플래그가 설정되었으면 재빌드를 예약하는 헬퍼 메서드입니다.
   ///
-  /// This is needed because our build function invokes user code, which in turn
-  /// may change some of the [Game]'s properties which would require the
-  /// [ListenerGameWidget] to be rebuilt. However, Flutter doesn't allow widgets
-  /// to be
-  /// marked dirty while they are building. So, this method is needed to avoid
-  /// such a limitation and ensure that the user code can set [Game]'s
-  /// properties freely, and that they will be propagated to the
-  ///  [ListenerGameWidget] at the earliest opportunity.
+  /// 이 동작이 필요한 이유는, 우리의 build 함수가 사용자 코드를 호출하고
+  /// 그 과정에서 [Game]의 일부 프로퍼티를 변경할 수 있기 때문입니다.
+  /// 이 경우 [ListenerGameWidget]을 다시 빌드해야 하지만, Flutter는 위젯이 빌드 도중에는
+  /// dirty로 표시될 수 없습니다. 따라서 이러한 제한을 우회하여 사용자 코드가
+  /// [Game]의 프로퍼티를 자유롭게 설정하고, 가능한 한 빨리 [ListenerGameWidget]에
+  /// 반영될 수 있도록 이 메서드가 필요합니다.
   Widget _protectedBuild(Widget Function() build) {
     late final Widget result;
     try {
@@ -236,8 +226,8 @@ class ListenerGameWidgetState<T extends Game>
     _loaderFuture = null;
   }
 
-  /// Visible for testing for
-  /// https://github.com/flame-engine/flame/issues/2771.
+  /// 테스트에서 가시화된(visible for testing) 메서드입니다:
+  /// https://github.com/flame-engine/flame/issues/2771
   @visibleForTesting
   static void initGameStateListener(
     Game currentGame,
@@ -250,9 +240,9 @@ class ListenerGameWidgetState<T extends Game>
     currentGame.lifecycleStateChange(AppLifecycleState.resumed);
   }
 
-  /// [disposeCurrentGame] is called by two flutter events - `didUpdateWidget`
-  /// and `dispose`.  When the parameter [callGameOnDispose] is true, the
-  /// `currentGame`'s `onDispose` method will be called; otherwise, it will not.
+  /// [disposeCurrentGame]은 두 가지 Flutter 이벤트인 `didUpdateWidget`과
+  /// `dispose`에서 호출됩니다. [callGameOnDispose] 매개변수가 true이면
+  /// `currentGame`의 `onDispose` 메서드가 호출되고, 그렇지 않으면 호출되지 않습니다.
   void disposeCurrentGame({bool callGameOnDispose = false}) {
     currentGame.removeGameStateListener(_onGameStateChange);
     currentGame.lifecycleStateChange(AppLifecycleState.paused);

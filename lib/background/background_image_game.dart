@@ -2,7 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/camera/bonfire_camera.dart';
 import 'package:bonfire/map/util/map_assets_manager.dart';
 
-/// Used to define parallax image as background
+/// 배경으로 사용할 시차(parallax) 이미지를 정의하는 데 사용됩니다.
 class BackgroundImageGame extends GameBackground with UseSprite {
   final int? id;
   final String imagePath;

@@ -14,7 +14,7 @@ import 'package:bonfire/bonfire.dart';
 /// Rafaelbarbosatec
 /// on 24/03/22
 extension AllyExtensions on Ally {
-  ///Execute simple attack melee using animation
+  /// 애니메이션을 사용해 단순 근접 공격을 실행합니다.
   void simpleAttackMelee({
     required double damage,
     required Vector2 size,
@@ -48,7 +48,7 @@ extension AllyExtensions on Ally {
     execute?.call();
   }
 
-  /// Execute the ranged attack using a component with animation
+  /// 애니메이션이 있는 컴포넌트를 사용해 원거리 공격을 실행합니다.
   void simpleAttackRange({
     required Future<SpriteAnimation> animationRight,
     required Future<SpriteAnimation> animationDestroy,
@@ -90,9 +90,9 @@ extension AllyExtensions on Ally {
     execute?.call();
   }
 
-  /// Checks whether the Enemy is within range. If so, move to it.
-  /// [visionAngle] in radians
-  /// [angle] in radians. is automatically picked up using the component's direction.
+  /// 적이 범위 안에 있는지 확인하고, 범위 안에 있으면 적 쪽으로 이동합니다.
+  /// [visionAngle]은 라디안(radians) 단위입니다.
+  /// [angle]은 라디안(radians) 단위이며, 별도로 지정하지 않으면 컴포넌트의 방향을 자동으로 사용합니다.
   void seeAndMoveToAttackRange({
     Function(Enemy)? positioned,
     // return true to stop move.

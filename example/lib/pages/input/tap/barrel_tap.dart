@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class BarrelTap extends GameDecoration
     with TapGesture, Movement, HandleForces, BlockMovementCollision {
   late TextPaint _textPaint;
-  final String text = 'Touch me';
+  final String text = '눌러보세요';
   BarrelTap({required Vector2 position})
       : super.withSprite(
           sprite: CommonSpriteSheet.barrelSprite,

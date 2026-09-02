@@ -4,15 +4,15 @@ import 'package:bonfire/bonfire.dart';
 
 typedef SpawnerPositionBuilder = GameComponent Function(Vector2 position);
 
-/// Componente used to spaw other components
+/// 다른 컴포넌트를 스폰(spawn)하는 데 사용되는 컴포넌트입니다.
 class ComponentSpawner extends GameComponent {
-  // Area that will spaw the components
+  // 컴포넌트가 스폰되는 영역입니다.
   final ShapeHitbox area;
-  // Interval in milliseconds
+  // 간격(밀리초 단위)입니다.
   final int interval;
-  // If true only generated if visible in screen.
+  // true인 경우 화면에 보이는 동안에만 생성됩니다.
   final bool onlyVisible;
-  // Builder that adds the component in the game.
+  // 게임에 컴포넌트를 추가하는 빌더입니다.
   final SpawnerPositionBuilder builder;
 
   final bool Function(BonfireGameInterface game)? spawnCondition;

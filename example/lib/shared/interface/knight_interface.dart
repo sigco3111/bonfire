@@ -58,7 +58,7 @@ class KnightInterface extends GameInterface {
       },
     ));
     await add(TextInterfaceComponent(
-      text: 'Start scene',
+      text: '씬 시작',
       textConfig: const TextStyle(
         color: Colors.white,
       ),
@@ -128,7 +128,7 @@ class KnightInterface extends GameInterface {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text('AwaitCallbackSceneAction test'),
+                  const Text('AwaitCallbackSceneAction 테스트'),
                   const SizedBox(
                     height: 20,
                   ),
@@ -137,7 +137,7 @@ class KnightInterface extends GameInterface {
                       Navigator.pop(context);
                       completed();
                     },
-                    child: const Text('CONTINUE'),
+                    child: const Text('계속하기'),
                   ),
                   const SizedBox(
                     height: 20,
@@ -147,7 +147,7 @@ class KnightInterface extends GameInterface {
                       Navigator.pop(context);
                       gameRef.stopScene();
                     },
-                    child: const Text('STOP SCENE'),
+                    child: const Text('씬 중단'),
                   ),
                 ],
               ),
@@ -239,7 +239,7 @@ class TestWidget extends StatelessWidget {
             KnightInterface.followerWidgetTestId,
           );
         },
-        child: const Text('Tap here to remove'),
+        child: const Text('눌러서 제거'),
       ),
     );
   }

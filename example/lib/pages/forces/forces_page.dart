@@ -66,7 +66,7 @@ class ForcesPage extends StatelessWidget {
             element.reset();
           });
         },
-        child: const Text('Reset position'),
+        child: const Text('위치 초기화'),
       ),
     );
   }

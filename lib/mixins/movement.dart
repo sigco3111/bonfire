@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:bonfire/bonfire.dart';
 
-/// Mixin responsible for adding movements
+/// 이동을 추가하는 역할을 하는 mixin입니다.
 mixin Movement on GameComponent {
   static const diaginalReduction = 0.7853981633974483;
   static const speedDefault = 80.0;
@@ -33,7 +33,7 @@ mixin Movement on GameComponent {
     _velocity.y = y ?? _velocity.y;
   }
 
-  /// You can override this method to listen the movement of this component
+  /// 이 컴포넌트의 이동을 청취하려면 이 메서드를 오버라이드(override)할 수 있습니다.
   void onMove(
     double speed,
     Vector2 displacement,
@@ -65,7 +65,7 @@ mixin Movement on GameComponent {
     translate(newP - this.position);
   }
 
-  /// Method used to translate component
+  /// 컴포넌트를 이동(translate)시키는 데 사용되는 메서드입니다.
   void translate(Vector2 displacement) {
     this.displacement = displacement;
     _updateLastDirection(displacement);
@@ -129,55 +129,55 @@ mixin Movement on GameComponent {
     setVelocityAxis(y: 0, x: 0);
   }
 
-  /// Move player to Up
+  /// 플레이어를 위(Up) 방향으로 이동시킵니다.
   void moveUp({double? speed}) {
     _lastSpeed = speed ?? this.speed;
     setVelocityAxis(y: -_lastSpeed);
   }
 
-  /// Move player to Down
+  /// 플레이어를 아래(Down) 방향으로 이동시킵니다.
   void moveDown({double? speed}) {
     _lastSpeed = speed ?? this.speed;
     setVelocityAxis(y: _lastSpeed);
   }
 
-  /// Move player to Left
+  /// 플레이어를 왼쪽(Left) 방향으로 이동시킵니다.
   void moveLeft({double? speed}) {
     _lastSpeed = speed ?? this.speed;
     setVelocityAxis(x: -_lastSpeed);
   }
 
-  /// Move player to Right
+  /// 플레이어를 오른쪽(Right) 방향으로 이동시킵니다.
   void moveRight({double? speed}) {
     _lastSpeed = speed ?? this.speed;
     setVelocityAxis(x: _lastSpeed);
   }
 
-  /// Move player to Up and Right
+  /// 플레이어를 위(Up)와 오른쪽(Right) 방향으로 이동시킵니다.
   void moveUpRight({double? speed}) {
     _lastSpeed = (speed ?? this.speed) * diaginalReduction;
     velocity = Vector2(_lastSpeed, -_lastSpeed);
   }
 
-  /// Move player to Up and Left
+  /// 플레이어를 위(Up)와 왼쪽(Left) 방향으로 이동시킵니다.
   void moveUpLeft({double? speed}) {
     _lastSpeed = (speed ?? this.speed) * diaginalReduction;
     velocity = Vector2(-_lastSpeed, -_lastSpeed);
   }
 
-  /// Move player to Down and Left
+  /// 플레이어를 아래(Down)와 왼쪽(Left) 방향으로 이동시킵니다.
   void moveDownLeft({double? speed}) {
     _lastSpeed = (speed ?? this.speed) * diaginalReduction;
     velocity = Vector2(-_lastSpeed, _lastSpeed);
   }
 
-  /// Move player to Down and Right
+  /// 플레이어를 아래(Down)와 오른쪽(Right) 방향으로 이동시킵니다.
   void moveDownRight({double? speed}) {
     _lastSpeed = (speed ?? this.speed) * diaginalReduction;
     velocity = Vector2(_lastSpeed, _lastSpeed);
   }
 
-  /// Move Player to direction by radAngle
+  /// 라디안 각도(radAngle) 방향으로 플레이어를 이동시킵니다.
   void moveFromAngle(double angle, {double? speed}) {
     _lastSpeed = speed ?? this.speed;
     velocity = BonfireUtil.vector2ByAngle(angle, intensity: _lastSpeed);
