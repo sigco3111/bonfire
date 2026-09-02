@@ -214,8 +214,8 @@ class ShapeCollision {
     return double.parse(value.toStringAsFixed(4));
   }
 
-  /// Rapid rejection experiment
-  /// Determine whether the projections of the line segment [a]~[b] and the line segment [c]~[d] on the x-axis and y-axis have a common area
+  /// 빠른 거부 실험 (Rapid rejection experiment)
+  /// 선분 [a]~[b]와 선분 [c]~[d]의 x축, y축 투영(projection)에 공통 영역이 있는지 확인합니다.
   static bool isLinesShadowOver(Vector2 a, Vector2 b, Vector2 c, Vector2 d) {
     if (min(a.x, b.x) > max(c.x, d.x) ||
         min(c.x, d.x) > max(a.x, b.x) ||
@@ -227,8 +227,8 @@ class ShapeCollision {
     return true;
   }
 
-  /// Straddle experiment
-  /// Determine whether the line segment [a]~[b] and the line segment [c]~[d]
+  /// 걸침 실험 (Straddle experiment)
+  /// 선분 [a]~[b]와 선분 [c]~[d]가 서로 교차하는지 확인합니다.
   /// https://www.rogoso.info/%E5%88%A4%E6%96%AD%E7%BA%BF%E6%AE%B5%E7%9B%B8%E4%BA%A4/
   static bool isLinesOver(Vector2 a, Vector2 b, Vector2 c, Vector2 d) {
     final ac = VectorVector(a, c);
@@ -293,6 +293,6 @@ class VectorVector {
       : x = end.x - start.x,
         y = end.y - start.y;
 
-  /// Vector negation
+  /// 벡터의 부호 반전 (negation)
   VectorVector get negative => VectorVector(end, start);
 }

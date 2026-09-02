@@ -32,8 +32,7 @@ class RandomMovementDirections {
   );
 }
 
-/// Mixin responsible for adding random movement like enemy
-/// walking through the scene
+/// 적이 씬을 돌아다니는 것처럼 무작위 이동을 추가하는 역할을 하는 mixin입니다.
 mixin RandomMovement on Movement {
   // ignore: constant_identifier_names
   static const _KEY_INTERVAL_KEEP_STOPPED = 'INTERVAL_RANDOM_MOVEMENT';
@@ -49,17 +48,17 @@ mixin RandomMovement on Movement {
 
   double _travelledDistance = 0;
 
-  // Area where the random movement will be made
+  // 무작위 이동이 이루어지는 영역입니다.
   ShapeHitbox? randomMovementArea;
 
-  /// Method that bo used in [update] method.
+  /// [update] 메서드 안에서 사용되는 메서드입니다.
   void runRandomMovement(
     double dt, {
     double? speed,
     double maxDistance = 50,
     double minDistance = 25,
 
-    /// milliseconds
+    /// milliseconds (밀리초)
     int timeKeepStopped = 2000,
     bool updateAngle = false,
     bool checkDirectionWithRayCast = false,

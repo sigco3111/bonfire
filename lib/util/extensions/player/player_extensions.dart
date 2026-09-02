@@ -5,10 +5,10 @@ import 'package:bonfire/geometry/polygon.dart';
 import 'package:flutter/widgets.dart';
 
 extension PlayerExtensions on Player {
-  /// This method we notify when detect the enemy when enter in [radiusVision] configuration
-  /// Method that bo used in [update] method.
-  /// [visionAngle] in radians
-  /// [angle] in radians. is automatically picked up using the component's direction.
+  /// [radiusVision] 설정 범위 내에 적이 들어왔을 때 감지되면 알림을 받는 메서드입니다.
+  /// [update] 메서드 안에서 호출되는 메서드입니다.
+  /// [visionAngle]은 라디안(radians) 단위입니다.
+  /// [angle]은 라디안(radians) 단위이며, 별도로 지정하지 않으면 컴포넌트의 방향을 자동으로 사용합니다.
   PolygonShape? seeEnemy({
     required Function(List<Enemy>) observed,
     VoidCallback? notObserved,

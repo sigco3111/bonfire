@@ -9,8 +9,8 @@ enum JumpingStateEnum {
   idle,
 }
 
-/// Mixin used to adds the jumper behavior. It's useful to platform games.
-/// OBS: It's needed adds a force to simulate gravity like. Example:
+/// 점퍼(jumper) 동작을 추가하는 데 사용되는 mixin입니다. 플랫폼 게임에 유용합니다.
+/// 참고: 중력과 같은 효과를 시뮬레이션하기 위해 force를 추가해야 합니다. 예시:
 /// BonfireWidget(
 ///   globalForces: [
 ///     GravityForce2D(),

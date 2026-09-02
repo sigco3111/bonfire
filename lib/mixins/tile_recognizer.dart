@@ -60,7 +60,7 @@ mixin TileRecognizer on GameComponent {
     return null;
   }
 
-  /// Method that checks what map tiles is below
+  /// 아래에 어떤 맵 타일이 있는지 확인하는 메서드입니다.
   Iterable<TileComponent> tileListBelow() {
     if (!hasGameRef) {
       return [];

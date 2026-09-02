@@ -12,13 +12,12 @@ import 'package:bonfire/bonfire.dart';
 /// Rafaelbarbosatec
 /// on 17/05/22
 mixin InternalChecker on Component {
-  /// Map available to store times that can be used to control
-  ///  the frequency of any action.
+  /// 어떤 동작의 빈도를 제어하기 위해 사용될 수 있는 시각들을 저장하는 데 사용되는 맵입니다.
   Map<String, IntervalTick>? _timers;
 
-  /// Returns true if for each time the defined millisecond interval passes.
-  /// Like a `Timer.periodic`
-  /// Used in flows involved in the [update]
+  /// 정의된 밀리초(millisecond) 간격이 매번 지날 때마다 true를 반환합니다.
+  /// `Timer.periodic`과 유사합니다.
+  /// [update]와 관련된 흐름에서 사용됩니다.
   bool checkInterval(
     String key,
     int intervalInMilli,

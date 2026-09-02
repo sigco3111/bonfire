@@ -23,7 +23,7 @@ mixin UseSpriteAnimation on GameComponent {
   Vector2 _strokePosition = Vector2.zero();
   Vector2? spriteAnimationOffset;
 
-  /// set Animation that will be drawn on the screen.
+  /// 화면에 그려질 애니메이션을 설정합니다.
   void setAnimation(
     SpriteAnimation? animation, {
     Vector2? size,
@@ -96,7 +96,7 @@ mixin UseSpriteAnimation on GameComponent {
     }
   }
 
-  /// Method used to play animation once time
+  /// 애니메이션을 한 번만 재생할 때 사용하는 메서드입니다.
   Future<void> playSpriteAnimationOnce(
     FutureOr<SpriteAnimation> animation, {
     Vector2? size,

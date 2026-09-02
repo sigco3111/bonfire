@@ -2,11 +2,11 @@ import 'package:bonfire/bonfire.dart';
 
 export 'package:bonfire/forces/forces_2d.dart';
 
-/// Mixin that makes the component suffer influences from global or local forces.
-/// To adds local forces just call `addForce` method. To adds global foreces use
-///  the param `globalForces` in `BonfireWidget`.
+/// 컴포넌트가 전역(global) 또는 로컬(local) 힘의 영향을 받도록 하는 믹스인(mixin)입니다.
+/// 로컬 힘을 추가하려면 `addForce` 메서드를 호출하세요. 전역 힘을 추가하려면
+/// `BonfireWidget`의 `globalForces` 매개변수를 사용하세요.
 mixin HandleForces on Movement {
-  /// Mass of the Component
+  /// 컴포넌트의 질량(mass).
   double _mass = 1.0;
 
   bool handleForcesEnabled = true;

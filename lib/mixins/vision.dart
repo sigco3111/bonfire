@@ -6,7 +6,7 @@ import 'package:bonfire/geometry/rectangle.dart';
 import 'package:bonfire/util/extensions/color_extensions.dart';
 import 'package:flutter/material.dart';
 
-/// Mixin used to adds basic Vision to the component
+/// 컴포넌트에 기본적인 시야(Vision)를 추가하는 데 사용되는 mixin입니다.
 mixin Vision on GameComponent {
   // ignore: constant_identifier_names
   static const VISION_360 = 6.28319;
@@ -30,11 +30,11 @@ mixin Vision on GameComponent {
     _paint.color = color ?? Colors.red.setOpacity(0.5);
   }
 
-  /// This method we notify when detect the component when enter
-  /// in [radiusVision] configuration
-  /// Method that bo used in [update] method.
-  /// [visionAngle] in radians
-  /// [angle] in radians.
+  /// 이 메서드는 컴포넌트가 [radiusVision] 설정 영역에 진입한 것을
+  /// 감지했을 때 알리는 데 사용됩니다.
+  /// [update] 메서드 안에서 사용되는 메서드입니다.
+  /// [visionAngle]은 라디안(radians) 단위입니다.
+  /// [angle]은 라디안(radians) 단위입니다.
   PolygonShape? seeComponent(
     GameComponent component, {
     required Function(GameComponent) observed,
@@ -95,11 +95,11 @@ mixin Vision on GameComponent {
     return false;
   }
 
-  /// This method we notify when detect components by type when enter
-  /// in [radiusVision] configuration
-  /// Method that bo used in [update] method.
-  /// [visionAngle] in radians
-  /// [angle] in radians.
+  /// 이 메서드는 타입별 컴포넌트들이 [radiusVision] 설정 영역에 진입한 것을
+  /// 감지했을 때 알리는 데 사용됩니다.
+  /// [update] 메서드 안에서 사용되는 메서드입니다.
+  /// [visionAngle]은 라디안(radians) 단위입니다.
+  /// [angle]은 라디안(radians) 단위입니다.
   PolygonShape? seeComponentType<T extends GameComponent>({
     required void Function(List<T>) observed,
     VoidCallback? notObserved,
@@ -228,5 +228,5 @@ mixin Vision on GameComponent {
   }
 }
 
-// Use it to turn your component not detectable from `Vision` mixin.
+// 컴포넌트가 `Vision` mixin으로 감지되지 않도록 하려면 이 mixin을 사용하세요.
 mixin CanNotSeen on GameComponent {}

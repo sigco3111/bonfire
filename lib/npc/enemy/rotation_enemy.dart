@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 
-/// Enemy used for top-down perspective
+/// 탑다운(top-down) 시점에서 사용되는 적(enemy)입니다.
 class RotationEnemy extends Enemy with UseSpriteAnimation, UseAssetsLoader {
   SpriteAnimation? animIdle;
   SpriteAnimation? animRun;

@@ -8,7 +8,7 @@ import 'package:flame/components.dart';
 import 'package:flutter/widgets.dart';
 
 extension RotationEnemyExtensions on RotationEnemy {
-  /// Checks whether the player is within range. If so, move to it.
+  /// 플레이어가 범위 안에 있는지 확인하고, 범위 안에 있으면 플레이어 쪽으로 이동합니다.
   void seeAndMoveToPlayer({
     required Function(Player) closePlayer,
     // return true to stop move.
@@ -47,7 +47,7 @@ extension RotationEnemyExtensions on RotationEnemy {
     );
   }
 
-  /// Checks whether the player is within range. If so, move to it.
+  /// 플레이어가 범위 안에 있는지 확인하고, 범위 안에 있으면 플레이어 쪽으로 이동합니다.
   void seeAndMoveToAttackRange({
     required Function(Player) positioned,
     // return true to stop move.
@@ -98,7 +98,7 @@ extension RotationEnemyExtensions on RotationEnemy {
     );
   }
 
-  ///Execute simple attack melee using animation
+  /// 애니메이션을 사용해 단순 근접 공격을 실행합니다.
   void simpleAttackMelee({
     required Future<SpriteAnimation> animationRight,
     required double damage,
@@ -130,9 +130,9 @@ extension RotationEnemyExtensions on RotationEnemy {
     execute?.call();
   }
 
-  /// Execute the ranged attack using a component with animation
+  /// 애니메이션이 있는 컴포넌트를 사용해 원거리 공격을 실행합니다.
   void simpleAttackRange({
-    /// use animation facing right.
+    /// 오른쪽을 향하는 애니메이션을 사용합니다.
     required Future<SpriteAnimation> animation,
     required Future<SpriteAnimation> animationDestroy,
     required Vector2 size,

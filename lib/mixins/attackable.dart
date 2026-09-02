@@ -8,16 +8,16 @@ enum AcceptableAttackOriginEnum { ALL, ENEMY, PLAYER_AND_ALLY, NONE }
 // ignore: constant_identifier_names
 enum AttackOriginEnum { ENEMY, PLAYER_OR_ALLY, WORLD }
 
-/// Mixin responsible for adding damage-taking behavior to the component.
+/// 컴포넌트에 데미지를 받는 동작을 추가하는 역할을 하는 mixin입니다.
 mixin Attackable on GameComponent {
-  /// Used to define which type of component can be damaged
+  /// 어떤 종류의 컴포넌트가 데미지를 받을 수 있는지 정의하는 데 사용됩니다.
   AcceptableAttackOriginEnum receivesAttackFrom =
       AcceptableAttackOriginEnum.ALL;
 
-  /// Life of the Enemy.
+  /// 적의 생명력(life)입니다.
   double _life = 100;
 
-  /// Max life of the Enemy.
+  /// 적의 최대 생명력(max life)입니다.
   double _maxLife = 100;
   double get maxLife => _maxLife;
 
@@ -25,13 +25,13 @@ mixin Attackable on GameComponent {
 
   double get life => _life;
 
-  /// Set initial life
+  /// 초기 생명력을 설정합니다.
   void initialLife(double life) {
     _life = life;
     _maxLife = life;
   }
 
-  /// Increase life
+  /// 생명력을 증가시킵니다.
   void addLife(double life) {
     var newLife = _life + life;
 
@@ -44,7 +44,7 @@ mixin Attackable on GameComponent {
     _verifyLimitsLife();
   }
 
-  // Update life
+  // 생명력을 업데이트합니다.
   void updateLife(double life, {bool verifyDieOrRevive = true}) {
     _life = life;
     if (verifyDieOrRevive) {
@@ -52,7 +52,7 @@ mixin Attackable on GameComponent {
     }
   }
 
-  /// reduce life
+  /// 생명력을 감소시킵니다.
   void removeLife(double life) {
     var newLife = _life - life;
     if (newLife < 0) {
@@ -64,10 +64,10 @@ mixin Attackable on GameComponent {
     _verifyLimitsLife();
   }
 
-  // Called when life is removed
+  // 생명력이 감소할 때 호출됩니다.
   void onRemoveLife(double life) {}
 
-  // Called when life is restored
+  // 생명력이 회복될 때 호출됩니다.
   void onRestoreLife(double life) {}
 
   void _verifyLimitsLife() {
@@ -78,8 +78,8 @@ mixin Attackable on GameComponent {
     }
   }
 
-  /// This method is called to give damage a this component.
-  /// Only receive damage if the method [checkCanReceiveDamage] return `true`.
+  /// 이 컴포넌트에 데미지를 주기 위해 호출되는 메서드입니다.
+  /// [checkCanReceiveDamage] 메서드가 `true`를 반환할 때만 데미지를 받습니다.
   bool handleAttack(
     AttackOriginEnum attacker,
     double damage,
@@ -92,7 +92,7 @@ mixin Attackable on GameComponent {
     return canReceive;
   }
 
-  // Called when the component receives damage
+  // 컴포넌트가 데미지를 받을 때 호출됩니다.
   void onReceiveDamage(
     AttackOriginEnum attacker,
     double damage,
@@ -101,8 +101,8 @@ mixin Attackable on GameComponent {
     removeLife(damage);
   }
 
-  /// This method is used to check if this component can
-  /// receive damage from any attacker.
+  /// 이 컴포넌트가 어떤 공격자로부터도 데미지를 받을 수 있는지
+  /// 확인할 때 사용하는 메서드입니다.
   bool checkCanReceiveDamage(AttackOriginEnum attacker) {
     if (isDead || isRemoving) {
       return false;
@@ -129,18 +129,18 @@ mixin Attackable on GameComponent {
     return false;
   }
 
-  // Called when the component dies
+  // 컴포넌트가 죽을 때 호출됩니다.
   void onDie() {
     _isDead = true;
   }
 
-  // Called when the component revives
+  // 컴포넌트가 부활할 때 호출됩니다.
   void onRevive() {
     _isDead = false;
   }
 
   bool get isDead => _isDead;
 
-  // Get rect collision of the component used to receive damage
+  // 데미지를 받을 때 사용되는 컴포넌트의 충돌 사각형(rect collision)을 가져옵니다.
   Rect rectAttackable() => rectCollision;
 }

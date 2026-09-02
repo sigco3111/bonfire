@@ -36,7 +36,7 @@ class JoystickDirectional {
 
   AssetsLoader? _loader = AssetsLoader();
 
-  /// Use to enable diagonal input events
+  /// 대각선 방향 입력을 활성화할지 여부.
   final bool enableDiagonalInput;
   final Alignment alignment;
 

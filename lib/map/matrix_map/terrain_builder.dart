@@ -15,7 +15,7 @@ import 'package:bonfire/util/pair.dart';
 /// Rafaelbarbosatec
 /// on 01/06/22
 
-/// Class responsible to create tiles map with SpriteSheet.
+/// SpriteSheet을 사용해 타일 맵을 만드는 역할을 하는 클래스입니다.
 class TerrainBuilder {
   final double tileSize;
   final List<MapTerrain> terrainList;

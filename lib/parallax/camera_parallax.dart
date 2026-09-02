@@ -67,7 +67,7 @@ class CameraParallax extends Parallax {
 }
 
 extension IterableExtension<T> on Iterable<T> {
-  /// Maps each element and its index to a new value.
+  /// 각 요소와 그 인덱스를 새로운 값으로 매핑합니다.
   Iterable<R> mapIndexed<R>(R Function(int index, T element) convert) sync* {
     var index = 0;
     for (final element in this) {

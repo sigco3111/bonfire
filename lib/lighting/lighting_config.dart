@@ -2,33 +2,33 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/util/pulse_value.dart';
 import 'package:flutter/widgets.dart';
 
-/// Class used to configure lighting
+/// 조명(lighting) 설정에 사용되는 클래스입니다.
 class LightingConfig {
-  /// Radius of the lighting
+  /// 조명의 반경.
   final double radius;
 
-  /// Color of the lighting
+  /// 조명의 색상.
   final Color color;
 
-  /// Enable pulse effect in lighting
+  /// 조명에 펄스(pulse) 효과를 활성화합니다.
   final bool withPulse;
 
-  /// Light follow component angle
+  /// 컴포넌트의 각도를 따라 조명이 회전합니다.
   final bool useComponentAngle;
 
-  /// Configure variation in pulse effect
+  /// 펄스 효과의 변화 폭을 설정합니다.
   final double pulseVariation;
 
-  /// Configure speed in pulse effect
+  /// 펄스 효과의 속도를 설정합니다.
   final double pulseSpeed;
 
-  /// Configure curve in pulse effect
+  /// 펄스 효과의 곡선(curve)을 설정합니다.
   final Curve pulseCurve;
 
-  /// Configure blur in lighting
+  /// 조명의 흐림(blur) 정도를 설정합니다.
   final double blurBorder;
 
-  /// Configure type of the lighting
+  /// 조명의 종류를 설정합니다.
   final LightingType type;
 
   final Vector2 align;

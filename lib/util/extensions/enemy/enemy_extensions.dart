@@ -1,9 +1,9 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/widgets.dart';
 
-/// Functions util to use in your [Enemy]
+/// [Enemy]에서 사용할 수 있는 유틸 함수들입니다.
 extension EnemyExtensions on Enemy {
-  ///Execute simple attack melee using animation
+  /// 애니메이션을 사용해 단순 근접 공격을 실행합니다.
   void simpleAttackMelee({
     required double damage,
     required Vector2 size,
@@ -40,7 +40,7 @@ extension EnemyExtensions on Enemy {
     execute?.call();
   }
 
-  /// Execute the ranged attack using a component with animation
+  /// 애니메이션이 있는 컴포넌트를 사용해 원거리 공격을 실행합니다.
   void simpleAttackRange({
     required Future<SpriteAnimation> animation,
     required Future<SpriteAnimation> animationDestroy,
@@ -101,9 +101,9 @@ extension EnemyExtensions on Enemy {
     execute?.call();
   }
 
-  /// Checks whether the player is within range. If so, move to it.
-  /// [visionAngle] in radians
-  /// [angle] in radians. is automatically picked up using the component's direction.
+  /// 플레이어가 범위 안에 있는지 확인하고, 범위 안에 있으면 플레이어 쪽으로 이동합니다.
+  /// [visionAngle]은 라디안(radians) 단위입니다.
+  /// [angle]은 라디안(radians) 단위이며, 별도로 지정하지 않으면 컴포넌트의 방향을 자동으로 사용합니다.
   void seeAndMoveToAttackRange({
     Function(Player)? positioned,
     // return true to stop move.

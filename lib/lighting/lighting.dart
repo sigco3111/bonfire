@@ -2,17 +2,17 @@
 
 import 'package:bonfire/bonfire.dart';
 
-/// Mixin used to configure lighting in your component
+/// 컴포넌트에 조명(lighting)을 설정하는 데 사용되는 믹스인입니다.
 mixin Lighting on GameComponent {
   LightingConfig? _lightingConfig;
 
-  /// Used to define rotation angle
+  /// 회전 각도를 정의하는 데 사용됩니다.
   double lightingAngle = 0.0;
 
-  /// Used to enable and disable light
+  /// 조명을 켜고 끄는 데 사용됩니다.
   bool lightingEnabled = true;
 
-  /// Used to set configuration
+  /// 설정을 지정하는 데 사용됩니다.
   void setupLighting(LightingConfig? config) => _lightingConfig = config;
 
   LightingConfig? get lightingConfig => _lightingConfig;

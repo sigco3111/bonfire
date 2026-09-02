@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bonfire/bonfire.dart';
 
-/// Mixin responsible for adding animations to movements
+/// 이동에 애니메이션을 추가하는 역할을 하는 mixin입니다.
 mixin DirectionAnimation on Movement {
   SimpleDirectionAnimation? animation;
 

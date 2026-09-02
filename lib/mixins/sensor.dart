@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/util/extensions/color_extensions.dart';
 
-/// Mixin responsible for adding trigger to detect other objects above
-/// T is a type that Sensor will be find contact.
+/// 위쪽에 있는 다른 객체를 감지하는 트리거(trigger)를 추가하는 역할을 하는 mixin입니다.
+/// T는 Sensor가 접촉을 찾을 타입입니다.
 mixin Sensor<T extends GameComponent> on GameComponent {
   static Color color = const Color(0xFFF44336).setOpacity(0.5);
   static const _sensorIntervalKey = 'SensorContact';

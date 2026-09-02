@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 
-/// Animated component that follow othe `GameComponent`
+/// 다른 `GameComponent`를 따라가는 애니메이션 컴포넌트입니다.
 class AnimatedFollowerGameObject extends AnimatedGameObject with Follower {
   AnimatedFollowerGameObject({
     required super.animation,

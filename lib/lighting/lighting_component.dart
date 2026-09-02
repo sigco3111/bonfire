@@ -12,7 +12,7 @@ abstract class LightingInterface {
   bool isEnabled();
 }
 
-/// Layer component responsible for adding lighting to the game.
+/// 게임에 조명(lighting)을 추가하는 역할을 하는 레이어 컴포넌트입니다.
 class LightingComponent extends GameComponent implements LightingInterface {
   final Paint _paintFocus = Paint()..blendMode = BlendMode.clear;
   final Paint _paintLighting = Paint();

@@ -8,8 +8,8 @@ class Keyboard extends PlayerController with KeyboardEventListener {
 
   final KeyboardConfig keyboardConfig;
 
-  /// Class responsible to adds a keyboard controller in your game.
-  /// If pass [oberver] this param, the joystick will controll this observer and not the Component passed in `player` param.
+  /// 게임에 키보드 컨트롤러를 추가하는 역할을 하는 클래스입니다.
+  /// [observer] 매개변수를 전달하면, `player` 매개변수로 전달된 Component가 아니라 이 observer를 조이스틱이 제어합니다.
   Keyboard({
     super.id,
     KeyboardConfig? config,
@@ -22,19 +22,19 @@ class Keyboard extends PlayerController with KeyboardEventListener {
 
   @override
   bool onKeyboard(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    /// If the keyboard is disabled, we do not process the event
+    /// 키보드가 비활성화돼 있으면 이벤트를 처리하지 않습니다.
     if (!keyboardConfig.enable) {
       return false;
     }
 
-    /// If the key is not accepted, we do not process the event
+    /// 허용된 키가 아닌 경우 이벤트를 처리하지 않습니다.
     if (keyboardConfig.acceptedKeys != null) {
       if (!keyboardConfig.acceptedKeys!.contains(event.logicalKey)) {
         return false;
       }
     }
 
-    /// No keyboard events, keep idle
+    /// 키보드 이벤트가 없으면 idle 상태를 유지합니다.
     if (!_containDirectionalPressed(keysPressed) &&
         !event.synthesized &&
         !_directionalIsIdle) {
@@ -46,7 +46,7 @@ class Keyboard extends PlayerController with KeyboardEventListener {
       );
     }
 
-    /// Process directional events
+    /// 방향 이벤트를 처리합니다.
     if (_isDirectional(event.logicalKey)) {
       final currentKeyboardKeys = _getDirectionlKeysPressed(keysPressed);
       if (currentKeyboardKeys.isNotEmpty) {
@@ -62,7 +62,7 @@ class Keyboard extends PlayerController with KeyboardEventListener {
         }
       }
     } else {
-      /// Process action events
+      /// 액션 이벤트를 처리합니다.
       if (event is KeyDownEvent) {
         onJoystickAction(
           JoystickActionEvent(
@@ -83,7 +83,7 @@ class Keyboard extends PlayerController with KeyboardEventListener {
     return true;
   }
 
-  /// Check if the key is for directional [arrows, wasd, or both]
+  /// 해당 키가 방향키용 키인지 확인합니다 [arrows, wasd 또는 둘 다].
   bool _isDirectional(LogicalKeyboardKey key) {
     return keyboardConfig.directionalKeys.any(
       (element) => element.contain(key),

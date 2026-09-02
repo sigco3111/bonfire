@@ -3,9 +3,8 @@ import 'package:bonfire/bonfire.dart';
 enum MovementByJoystickType { direction, angle }
 
 class MovementByJoystickProps {
-  /// MovementByJoystickType.direction if you only want the
-  ///  8 directions movement.
-  ///  Set MovementByJoystickType.angle to have full 360 movement
+  /// 8방향 이동만 원한다면 [MovementByJoystickType.direction]을 지정하세요.
+  /// 전체 360도 이동을 원한다면 [MovementByJoystickType.angle]을 설정하세요.
   MovementByJoystickType moveType;
   bool intensityEnabled;
   bool diagonalEnabled;
@@ -18,7 +17,7 @@ class MovementByJoystickProps {
   });
 }
 
-/// Mixin responsible for adding movements through joystick events
+/// 조이스틱 이벤트를 통해 이동을 추가하는 역할을 하는 mixin입니다.
 mixin MovementByJoystick on Movement, PlayerControllerListener {
   JoystickMoveDirectional _currentDirectional = JoystickMoveDirectional.IDLE;
   JoystickMoveDirectional _newDirectional = JoystickMoveDirectional.IDLE;
@@ -27,7 +26,7 @@ mixin MovementByJoystick on Movement, PlayerControllerListener {
   double _lastSpeed = 0;
   double get _lastSpeedDiagonal => _lastSpeed * Movement.diaginalReduction;
 
-  /// the angle the player should move in 360 mode
+  /// 360도 모드에서 플레이어가 이동해야 하는 각도입니다.
   double movementByJoystickRadAngle = 0;
 
   MovementByJoystickProps _settings = MovementByJoystickProps();

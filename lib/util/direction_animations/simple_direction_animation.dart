@@ -5,7 +5,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/util/direction_animations/render_transform_warpper.dart';
 import 'package:bonfire/util/sprite_animation_render.dart';
 
-/// Class responsible to manager animation on `SimplePlayer` and `SimpleEnemy`
+/// `SimplePlayer`와 `SimpleEnemy`의 애니메이션을 관리하는 클래스입니다.
 class SimpleDirectionAnimation {
   SpriteAnimation? _idleLeftAnim;
   SpriteAnimation? _idleRightAnim;
@@ -272,7 +272,7 @@ class SimpleDirectionAnimation {
     return null;
   }
 
-  /// Method used to play specific default animation
+  /// 특정 기본 애니메이션을 재생할 때 사용하는 메서드입니다.
   void play(SimpleAnimationEnum animation) {
     if (_currentType == animation) {
       return;
@@ -446,7 +446,7 @@ class SimpleDirectionAnimation {
     }
   }
 
-  /// Method used to play specific animation registred in `others`
+  /// `others`에 등록된 특정 애니메이션을 재생할 때 사용하는 메서드입니다.
   void playOther(dynamic key, {bool? flipX, bool? flipY}) {
     if (containOther(key) &&
         (_currentKeyCustom != key || _checkFlipIsDiffrent(flipX, flipY))) {
@@ -470,7 +470,7 @@ class SimpleDirectionAnimation {
 
   bool _fastAnimationUseCompFlip = false;
 
-  /// Method used to play animation once time
+  /// 애니메이션을 한 번만 재생할 때 사용하는 메서드입니다.
   Future<void> playOnce(
     FutureOr<SpriteAnimation> animation, {
     VoidCallback? onFinish,
@@ -508,7 +508,7 @@ class SimpleDirectionAnimation {
     return completer.future;
   }
 
-  /// Method used to play animation once time
+  /// 애니메이션을 한 번만 재생할 때 사용하는 메서드입니다.
   Future<void> playOnceOther(
     dynamic key, {
     VoidCallback? onFinish,
@@ -551,7 +551,7 @@ class SimpleDirectionAnimation {
     return completer.future;
   }
 
-  /// Method used to register new animation in others
+  /// `others`에 새로운 애니메이션을 등록할 때 사용하는 메서드입니다.
   Future<void> addOtherAnimation(
     dynamic key,
     FutureOr<SpriteAnimation> animation,

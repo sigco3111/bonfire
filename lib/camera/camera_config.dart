@@ -3,29 +3,29 @@ import 'package:bonfire/bonfire.dart';
 
 enum InitialMapZoomFitEnum { none, fitWidth, fitHeight, fit }
 
-/// Class use to configure camera behavior.
+/// 카메라 동작을 설정하는 데 사용하는 클래스입니다.
 class CameraConfig {
   static final movementWindowDefault = Vector2.all(16);
 
-  /// window in the center screen able to move without move camera
+  /// 화면 중앙에서 카메라가 움직이지 않고 컴포넌트가 이동할 수 있는 영역(window)
   Vector2 movementWindow;
 
-  /// When this true the camera remains within the map area
+  /// true로 설정하면 카메라가 맵 영역 안에 머무릅니다.
   bool moveOnlyMapArea;
 
-  /// Camera's speed
+  /// 카메라 이동 속도.
   double speed;
 
-  /// Automatic zoom with base some configurations.
+  /// 일부 설정에 따라 자동으로 줌을 조정합니다.
   InitialMapZoomFitEnum initialMapZoomFit;
 
-  /// camera zoom configurarion. default: 1
+  /// 카메라 줌 설정. 기본값: 1
   final double zoom;
 
-  /// Camera angle to rotate the camera. default: 0
+  /// 카메라를 회전시킬 각도. 기본값: 0
   final double angle;
 
-  /// Component that the camera will focus on / follow
+  /// 카메라가 포커스하거나 따라갈 컴포넌트.
   final GameComponent? target;
 
   final bool startFollowPlayer;

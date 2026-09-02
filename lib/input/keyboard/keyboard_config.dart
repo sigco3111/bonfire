@@ -37,16 +37,16 @@ class KeyboardDirectionalKeys {
 }
 
 class KeyboardConfig {
-  /// Use to enable ou disable keyboard events
+  /// 키보드 이벤트의 활성화 여부를 설정하는 데 사용됩니다.
   bool enable;
 
-  /// Type of the directional (arrows, wasd or wasdAndArrows)
+  /// 방향키 입력의 종류(arrows, wasd 또는 wasdAndArrows)
   final List<KeyboardDirectionalKeys> directionalKeys;
 
-  /// You can pass specific Keys accepted. If null accept all keys
+  /// 허용할 특정 키들을 전달할 수 있습니다. null이면 모든 키를 허용합니다.
   final List<LogicalKeyboardKey>? acceptedKeys;
 
-  /// Use to enable diagonal input events
+  /// 대각선 입력 이벤트를 활성화하는 데 사용됩니다.
   bool enableDiagonalInput;
 
   KeyboardConfig({

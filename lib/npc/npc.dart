@@ -18,7 +18,7 @@ export 'simple_npc.dart';
 /// Rafaelbarbosatec
 /// on 22/03/22
 
-/// It is used to represent your NPC.
+/// NPC를 표현하는 데 사용됩니다.
 class Npc extends GameComponent with Movement, Vision {
   Npc({
     required Vector2 position,

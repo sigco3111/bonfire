@@ -10,8 +10,8 @@ abstract class Force2D {
   Vector2 transform(Vector2 velocity, double mass, double dt);
 }
 
-/// Apply acceleration to velocity
-/// {value} pixel/seconds
+/// 속도에 가속도(acceleration)를 적용합니다.
+/// {value} 단위: 픽셀/초 (pixel/seconds)
 class AccelerationForce2D extends Force2D {
   AccelerationForce2D({required super.id, required super.value});
 
@@ -21,8 +21,8 @@ class AccelerationForce2D extends Force2D {
   }
 }
 
-/// Apply resistence to velocity
-/// {value} pixel/seconds
+/// 속도에 저항(resistance)을 적용합니다.
+/// {value} 단위: 픽셀/초 (pixel/seconds)
 class ResistanceForce2D extends Force2D {
   ResistanceForce2D({required super.id, required super.value});
 
@@ -35,7 +35,7 @@ class ResistanceForce2D extends Force2D {
   }
 }
 
-/// Apply linear force to velocity
+/// 속도에 선형(linear) 힘을 적용합니다.
 class LinearForce2D extends Force2D {
   LinearForce2D({required super.id, required super.value});
 
@@ -48,8 +48,8 @@ class LinearForce2D extends Force2D {
   }
 }
 
-/// Apply acceleration to velocity
-/// {value} pixel/seconds
+/// 속도에 가속도(acceleration)를 적용합니다.
+/// {value} 단위: 픽셀/초 (pixel/seconds)
 class GravityForce2D extends AccelerationForce2D {
   GravityForce2D({Vector2? value})
       : super(id: 'GravityForce2D', value: value ?? Vector2(0, 600));

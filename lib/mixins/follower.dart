@@ -12,8 +12,8 @@ import 'package:flame/components.dart';
 ///
 /// Rafaelbarbosatec
 /// on 04/02/22
-/// Mixin that do the component follow the targe
-/// If target is null will try follow your parent
+/// 컴포넌트가 대상을 따라가도록 하는 mixin입니다.
+/// 대상이 null이면 부모를 따라갑니다.
 mixin Follower on GameComponent {
   GameComponent? followerTarget;
   Vector2? followerOffset;

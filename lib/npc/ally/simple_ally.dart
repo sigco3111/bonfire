@@ -15,7 +15,7 @@ import 'package:bonfire/util/direction_animations/simple_direction_animation.dar
 /// Rafaelbarbosatec
 /// on 24/03/22
 
-/// Enemy with animation in all direction
+/// 모든 방향 애니메이션을 가진 아군(ally)입니다.
 class SimpleAlly extends Ally with DirectionAnimation {
   SimpleAlly({
     required super.position,

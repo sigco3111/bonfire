@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:bonfire/bonfire.dart';
 
-/// Animated component
+/// 애니메이션 컴포넌트입니다.
 class AnimatedGameObject extends GameObject with UseSpriteAnimation {
   final VoidCallback? onFinish;
   final VoidCallback? onStart;

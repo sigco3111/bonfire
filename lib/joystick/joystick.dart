@@ -7,8 +7,8 @@ class Joystick extends PlayerController {
 
   JoystickDirectional? get directional => _directional;
 
-  /// Class responsable to adds a joystick controller in your game.
-  /// If pass [oberver] this param, the joystick will controll this observer and not the Component passed in `player` param.
+  /// 게임에 조이스틱(joystick) 컨트롤러를 추가하는 역할을 하는 클래스입니다.
+  /// [observer] 매개변수를 전달하면, `player` 매개변수로 전달된 컴포넌트가 아니라 이 옵저버를 컨트롤합니다.
   Joystick({
     super.id,
     this.actions = const [],

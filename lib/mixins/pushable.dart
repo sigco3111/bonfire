@@ -13,8 +13,8 @@ import 'package:flutter/widgets.dart';
 /// Rafaelbarbosatec
 /// on 23/12/21
 
-/// This mixin give to the component the pushable behavior.
-/// To use this mixin the Component must have a `Movement` mixin.
+/// 이 mixin은 컴포넌트에 밀림(pushable) 동작을 부여합니다.
+/// 이 mixin을 사용하려면 Component에 `Movement` mixin이 있어야 합니다.
 mixin Pushable on Movement {
   bool _enablePushable = true;
   PushableFromEnum _pushbleFrom = PushableFromEnum.ALL;
@@ -70,7 +70,7 @@ mixin Pushable on Movement {
     }
   }
 
-  /// Returning true if the component is pushable, false otherwise.
+  /// 컴포넌트가 밀 수 있다면 true를 반환하고, 그렇지 않으면 false를 반환합니다.
   bool onPush(GameComponent component) {
     return true;
   }

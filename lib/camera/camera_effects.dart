@@ -103,21 +103,21 @@ class ShakeEffect extends Component {
     super.update(dt);
   }
 
-  /// Whether the camera is currently shaking or not.
+  /// 카메라가 현재 흔들리고(shaking) 있는지 여부.
   bool get shaking => _shakeTimer > 0.0;
 
-  /// Buffer to re-use for the shake delta.
+  /// 흔들림 델타를 재사용하기 위한 버퍼.
   final _shakeBuffer = Vector2.zero();
 
-  /// The random number generator to use for shaking
+  /// 흔들림에 사용할 난수 생성기.
   final _shakeRng = Random();
 
-  /// Generates one value between [-1, 1] * [_shakeIntensity] used once for each
-  /// of the axis in the shake delta.
+  /// [-1, 1] * [_shakeIntensity] 범위에서 한 개의 값을 생성하며,
+  /// 흔들림 델타의 각 축에 한 번씩 사용됩니다.
   double _shakeValue() => (_shakeRng.nextDouble() - 0.5) * 2 * intensity;
 
-  /// Generates a random [Vector2] of displacement applied to the camera.
-  /// This will be a random [Vector2] every tick causing a shakiness effect.
+  /// 카메라에 적용될 무작위 [Vector2] 변위(displacement)를 생성합니다.
+  /// 매 틱마다 무작위 [Vector2]가 생성되어 흔들리는 효과를 만듭니다.
   Vector2 _shakeDelta() {
     if (shaking) {
       _shakeBuffer.setValues(_shakeValue(), _shakeValue());

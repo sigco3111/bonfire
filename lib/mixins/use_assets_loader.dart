@@ -14,7 +14,7 @@ import 'package:bonfire/bonfire.dart';
 /// Rafaelbarbosatec
 /// on 04/02/22
 mixin UseAssetsLoader on Component {
-  /// Used to load assets in [onLoad]
+  /// [onLoad]에서 자원을 로드하는 데 사용됩니다.
   AssetsLoader? loader = AssetsLoader();
   @override
   Future<void> onLoad() async {

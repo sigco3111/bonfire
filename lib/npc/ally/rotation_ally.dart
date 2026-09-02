@@ -12,7 +12,7 @@ import 'package:bonfire/bonfire.dart';
 /// Rafaelbarbosatec
 /// on 24/03/22
 
-/// Enemy used for top-down perspective
+/// 탑다운(top-down) 시점에서 사용되는 아군(ally)입니다.
 class RotationAlly extends Ally with UseSpriteAnimation, UseAssetsLoader {
   SpriteAnimation? animIdle;
   SpriteAnimation? animRun;

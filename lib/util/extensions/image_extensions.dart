@@ -34,8 +34,8 @@ extension BonfireImageExtension on Image {
     );
   }
 
-  /// Do merge image. Overlaying the images
-  /// @deprecated Use [ImageComposition]
+  /// 이미지를 병합합니다. 이미지들을 서로 겹쳐서(overlay) 그립니다.
+  /// @deprecated [ImageComposition]을 사용하세요.
   Future<Image> overlap(Image other) {
     final recorder = PictureRecorder();
     final paint = Paint();
@@ -47,7 +47,7 @@ extension BonfireImageExtension on Image {
     return recorder.endRecording().toImage(totalWidth, totalHeight);
   }
 
-  /// Do merge image list. Overlaying the images
+  /// 이미지 목록을 병합합니다. 이미지들을 서로 겹쳐서(overlay) 그립니다.
   Future<Image> overlapList(List<Image> others) {
     final recorder = PictureRecorder();
     final paint = Paint();

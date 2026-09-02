@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/widgets.dart';
 
-/// Animated component used like range attack.
+/// 원거리(range) 공격처럼 사용되는 애니메이션 컴포넌트입니다.
 class FlyingAttackGameObject extends AnimatedGameObject
     with Movement, CanNotSeen, BlockMovementCollision {
   final dynamic id;

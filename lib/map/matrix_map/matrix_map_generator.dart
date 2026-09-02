@@ -62,10 +62,10 @@ class ItemMatrixProperties {
 
 typedef TileModelBuilder = Tile Function(ItemMatrixProperties properties);
 
-/// Class useful to create radom map.
-/// * [matrix], Matrix used to create the map.
-/// * [build], Builder used to create the TileModel that represents each tile in the map.
-/// * [axisInverted], used to invert axis of the matrix. Example: matrix[x,y] turn matrix[y,x]. It's useful to use an easier-to-see array in code.
+/// 무작위 맵을 만드는 데 유용한 클래스입니다.
+/// * [matrix], 맵을 만드는 데 사용되는 매트릭스입니다.
+/// * [build], 맵 안의 각 타일을 표현하는 TileModel을 만드는 데 사용되는 빌더입니다.
+/// * [axisInverted], 매트릭스의 축을 뒤집는 데 사용됩니다. 예: matrix[x,y]가 matrix[y,x]가 됩니다. 코드에서 보기 쉬운 배열을 사용하는 데 유용합니다.
 class MatrixMapGenerator {
   static WorldMap generate({
     required List<MatrixLayer> layers,
