@@ -50,6 +50,12 @@ class _HomePageState extends State<HomePage> {
     menu = _buildMenu();
     itemSelected = menu.first.itens.first;
     super.initState();
+    // 페이지 입장 시 버거 메뉴(Drawer)를 자동으로 연다.
+    // post-frame callback을 사용해 첫 프레임이 그려진 직후 호출한다.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      Scaffold.of(context).openDrawer();
+    });
   }
 
   @override
